@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <title>Wellcome to Calculator 😎</title>
+  </head>
+  <body>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="card shadow">
+            <div class="card-body">
+              <h2>Currency Converter</h2>
+              <hr />
+              <div class="msg"></div>
+              <form action="#" id="currency_form">
+                <div class="my-3">
+                  <label for="amountId">Amount</label>
+                  <input name="amount" id="amountId" class="form-control" type="text" />
+                </div>
+
+                <div class="my-3">
+                  <label for="">Select currency</label>
+                  <select name="currency" class="form-control" id="">
+                    <option value="">-select-</option>
+                    <option value="USD">USD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="Pound">Pound</option>
+                    <option value="Euro">Euro</option>
+                    <option value="Rupee">Rupee</option>
+                  </select>
+                </div>
+                <div class="my-3">
+                  <input
+                    class="btn btn-primary w-100"
+                    value="CONVERT"
+                    type="submit"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="card-footer">
+              <div class="details"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card shadow">
+            <div class="card-body">
+              <h2>Marage Shit</h2>
+              <hr />
+              <form action="#" id="shadi_form">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="my-3">
+                      <label for="grmName">Groom's Name</label>
+                      <input
+                        name="groomName"
+                        id="grmName"
+                        class="form-control"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="my-3">
+                      <label for="groomsAge">Groom's Age</label>
+                      <input
+                        name="groomsAge"
+                        id="groomsAge"
+                        class="form-control"
+                        type="number"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="my-3">
+                      <label for="Salary">Salary</label>
+                      <input
+                        name="Salary"
+                        id="Salary"
+                        class="form-control"
+                        type="number"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="my-3">
+                      <label for="Height">Height</label>
+                      <input
+                        name="Height"
+                        placeholder="write in feet"
+                        id="Height"
+                        class="form-control"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="my-3">
+                  <input
+                    class="btn btn-primary w-100"
+                    value="Check Bride For You"
+                    type="submit"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="card-footer">
+              <div class="msg-details"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="card shadow">
+            <div class="card-body">
+              <h2>BMI Calculator</h2>
+              <hr />
+              <form action="#" id="bmi_form">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="my-3">
+                      <label for="Weight">Your Weight</label>
+                      <input
+                        name="Weight"
+                        id="Weight"
+                        class="form-control"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="my-3">
+                      <label for="feet">feet</label>
+                      <input
+                        name="feet"
+                        id="feet"
+                        class="form-control"
+                        type="number"
+                        required
+                      />
+                    </div>
+                      <label for="inches">inches</label>
+                      <input
+                        name="inches"
+                        id="inches"
+                        class="form-control"
+                        type="number"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="w-75 my-3 mx-auto">
+                  <input
+                    class="btn btn-primary w-100"
+                    value="Check Your BMI"
+                    type="submit"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="card-footer">
+              <div class="last-msg"></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="card shadow">
+              <div class="card-body">
+                <h2>Area Calculator</h2>
+                <hr />
+                <form id="area_form">
+                  <div class="my-3">
+                    <label for="">Select area type</label>
+                    <select class="form-control" name="" id="area_type">
+                      <option value="">-select-</option>
+                      <option value="Rectangle">Rectangle</option>
+                      <option value="Squre">Squre</option>
+                      <option value="Triangle">Triangle</option>
+                      <option value="Circle">Circle</option>
+                    </select>
+                  </div>
+  
+                  <div class="rec">
+                    <div class="my-3">
+                      <label for="">Length</label>
+                      <input name="length" class="form-control" type="text" />
+                    </div>
+                    <div class="my-3">
+                      <label for="">Width</label>
+                      <input name="width" class="form-control" type="text" />
+                    </div>
+                  </div>
+  
+                  <div class="squ">
+                    <div class="my-3">
+                      <label for="">Bahu</label>
+                      <input name="bahu" class="form-control" type="text" />
+                    </div>
+                  </div>
+                  <div class="tri">
+                    <div class="my-3">
+                      <label for="">Base</label>
+                      <input name="base" class="form-control" type="text" />
+                    </div>
+                    <div class="my-3">
+                      <label for="">Height</label>
+                      <input name="heigth" class="form-control" type="text" />
+                    </div>
+                  </div>
+                  <div class="cir">
+                    <div class="my-3">
+                      <label for="">Radius</label>
+                      <input name="radius" class="form-control" type="text" />
+                    </div>
+                  </div>
+                  <div class="my-3">
+                    <input
+                      class="btn btn-primary w-100"
+                      value="calculate"
+                      type="submit"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <div class="details-msg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-12 col-md-6 text-left">
+            <div class="card shadow">
+              <div class="card-body">
+                <h2>Result Shit</h2>
+                <hr />
+                <form action="#" id="result_form">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="my-3">
+                        <label for="stdName">Student Name</label>
+                        <input
+                          name="studentName"
+                          id="stdName"
+                          class="form-control"
+                          type="text"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="my-3">
+                        <label for="stdRoll">Student Roll</label>
+                        <input
+                          name="studentRoll"
+                          id="stdRoll"
+                          class="form-control"
+                          type="number"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="my-3">
+                    <p>Quota :</p>
+                     
+                    <input
+                      type="radio"
+                      id="general"
+                      name="Quota"
+                      value="general"
+                      required
+                    />
+                      <label for="general">General</label><br />
+                     
+                    <input
+                      type="radio"
+                      id="freedomFighter"
+                      name="Quota"
+                      value="freedomFighter"
+                      required
+                    />
+                      <label for="css">Freedom Fighter</label><br />
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="my-3">
+                        <label for="Bangla">Bangla</label>
+                        <input
+                          name="Bangla"
+                          id="Bangla"
+                          class="form-control"
+                          type="number"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="my-3">
+                        <label for="English">English</label>
+                        <input
+                          name="English"
+                          id="English"
+                          class="form-control"
+                          type="number"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="my-3">
+                        <label for="Math">Math</label>
+                        <input
+                          name="Math"
+                          id="Math"
+                          class="form-control"
+                          type="number"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="my-3">
+                        <label for="Science">Science</label>
+                        <input
+                          name="Science"
+                          id="Science"
+                          class="form-control"
+                          type="number"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="my-3">
+                        <label for="Social_Science">Social Science</label>
+                        <input
+                          name="Social_Science"
+                          id="Social_Science"
+                          class="form-control"
+                          type="number"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="my-3">
+                        <label for="Religion">Religion</label>
+                        <input
+                          name="Religion"
+                          id="Religion"
+                          class="form-control"
+                          type="number"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="my-3">
+                    <input
+                      class="btn btn-primary w-100"
+                      value="Check Your Result"
+                      type="submit"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <div class="final-msg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+    <script src="./function.js"></script>
+    <script src="./Calculator.js"></script>
+  </body>
+</html>
