@@ -90,7 +90,7 @@ const setAlert = (msg, type = "danger") => {
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/devtanzir/Ashraful-sir-tasks/blob/main/images/currency.PNG)
 
 
 ## 2nd tasks
@@ -163,7 +163,7 @@ const setAlert = (msg, type = "danger") => {
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/devtanzir/Ashraful-sir-tasks/blob/main/images/marage.PNG)
 
 
 ## 3rd tasks
@@ -255,7 +255,7 @@ bmiFrom.addEventListener("submit", (e) => {
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/devtanzir/Ashraful-sir-tasks/blob/main/images/bmi.PNG)
 
 
 ## 4th tasks
@@ -373,7 +373,7 @@ const areaCal = (type, val1, val2 = "") => {
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/devtanzir/Ashraful-sir-tasks/blob/main/images/area.PNG)
 
 
 ## 5th tasks
@@ -555,8 +555,8 @@ resultFrom.addEventListener("submit", (e) => {
 
 ## for general
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/devtanzir/Ashraful-sir-tasks/blob/main/images/result%20general%20quata.PNG)
 
 ## for freedomFighter
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/devtanzir/Ashraful-sir-tasks/blob/main/images/result%20ff%20quata.PNG)
