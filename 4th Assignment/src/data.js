@@ -59,7 +59,7 @@ const bloodDonor = [
     contact: "01384643792",
     bloodGroup: "B+",
     isMarrid: false,
-    lastDateOfGivingBlood: new Date("2023-08-20"),
+    lastDateOfGivingBlood: new Date("2023-12-30"),
     bloodDonatedList: [
       {
         name: "Emon",
@@ -182,6 +182,54 @@ const bloodDonor = [
         name: "akram",
         reason: "Accident",
         date: new Date("2023-12-13"),
+      },
+    ],
+  },
+  {
+    name: "al-amin",
+    age: 40,
+    location: "uttora",
+    contact: "01379237848",
+    bloodGroup: "B+",
+    isMarrid: false,
+    lastDateOfGivingBlood: new Date("2023-11-20"),
+    bloodDonatedList: [
+      {
+        name: "akram",
+        reason: "Accident",
+        date: new Date("2023-10-20"),
+      },
+    ],
+  },
+  {
+    name: "Muslim",
+    age: 40,
+    location: "uttora",
+    contact: "01379237848",
+    bloodGroup: "B+",
+    isMarrid: true,
+    lastDateOfGivingBlood: new Date("2024-01-20"),
+    bloodDonatedList: [
+      {
+        name: "akram",
+        reason: "Accident",
+        date: new Date("2023-10-20"),
+      },
+    ],
+  },
+  {
+    name: "Muslim",
+    age: 40,
+    location: "uttora",
+    contact: "01379237848",
+    bloodGroup: "A+",
+    isMarrid: true,
+    lastDateOfGivingBlood: new Date("2023-10-20"),
+    bloodDonatedList: [
+      {
+        name: "akram",
+        reason: "Accident",
+        date: new Date("2023-10-20"),
       },
     ],
   },

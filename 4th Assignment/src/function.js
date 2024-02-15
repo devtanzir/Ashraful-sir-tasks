@@ -1,5 +1,8 @@
 const getDonor = (bloodGroup) => {
-  bloodDonor.map((item) => {
+  let finalDonor = bloodDonor.sort(
+    (a, b) => a.lastDateOfGivingBlood - b.lastDateOfGivingBlood
+  );
+  finalDonor.map((item) => {
     let targetDate = item.lastDateOfGivingBlood; //new Date("2002-06-09");
     let today = new Date();
     let differenceInMilliseconds = today - targetDate;
@@ -10,7 +13,11 @@ const getDonor = (bloodGroup) => {
     if (item.bloodGroup === bloodGroup && differenceInDays >= 120) {
       console.log(`${item.name} is Able to Donate Blood ✅`);
     }
-    if (item.bloodGroup === bloodGroup && differenceInDays <= 120) {
+    if (
+      item.bloodGroup === bloodGroup &&
+      differenceInDays >= 110 &&
+      differenceInDays <= 120
+    ) {
       console.log(
         `${item.name} is not able to donate blood. he have to wait ${
           120 - differenceInDays
