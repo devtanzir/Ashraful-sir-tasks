@@ -560,3 +560,6 @@ resultFrom.addEventListener("submit", (e) => {
 ## for freedomFighter
 
 ![App Screenshot](https://github.com/devtanzir/Ashraful-sir-tasks/blob/main/images/result%20ff%20quata.PNG)
+
+
+# 2nd Assignment
