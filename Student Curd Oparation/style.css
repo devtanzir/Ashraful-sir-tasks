@@ -1,0 +1,16 @@
+.shop-data tr{
+    vertical-align: middle;
+}
+.single-data img{
+
+width: 250px;
+height: 250px;
+object-fit: cover;
+display: block;
+margin: auto;
+border-radius: 50%;
+border: 10px solid #fff;
+}
+i{
+    pointer-events: none;
+}

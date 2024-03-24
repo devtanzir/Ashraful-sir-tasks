@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Student CRUD</title>
+  </head>
+  <body>
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Create Student
+          </button>
+
+          <br />
+          <br />
+          <div class="card shadow">
+            <div class="card-body">
+              <h2>All Students</h2>
+              <hr />
+              <table class="table table-striped shop-data">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Location</th>
+                    <th>createdAt</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="student-list"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create New Student</h5>
+            <button
+            id="modalCloseBtn"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="msg"></div>
+            <form id="student-form">
+              <div class="my-3">
+                <label for="name">name</label>
+                <input id="name" name="name" type="text" class="form-control" />
+              </div>
+              <div class="my-3">
+                <label for="email">email</label>
+                <input id="email" name="email" type="text" class="form-control" />
+              </div>
+              <div class="my-3">
+                <label for="mobile">mobile</label>
+                <input id="mobile" name="mobile" type="text" class="form-control" />
+              </div>
+              <div class="my-3">
+                <label for="location">location</label>
+                <input id="location" name="location" type="text" class="form-control" />
+              </div>
+              <div class="my-3">
+                <label for="photo">photo</label>
+                <input id="photo" name="photo" type="text" class="form-control" />
+              </div>
+              <div class="my-3">
+                <input
+                  type="submit"
+                  class="btn btn-primary w-100"
+                  value="Add Now"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- edit data modal -->
+    <div
+      class="modal fade"
+      id="exampleModal3"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel3"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel3">Update Data</h5>
+            <button
+            id="editModalClose"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="msg"></div>
+            <form id="product-update-form"></form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- show product modal -->
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="single-data text-center">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <script src="src/data.js"></script>
+    <script src="src/models.js"></script>
+    <script src="src/function.js"></script>
+    <script src="src/main.js"></script>
+  </body>
+</html>
