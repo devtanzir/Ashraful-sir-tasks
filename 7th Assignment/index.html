@@ -228,10 +228,11 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a data-bs-toggle="modal"
+                  data-bs-target="#exampleModal3" href="#">
                     <div class="user-menu-icon"></div>
                     <div class="user-menu-item">
-                      <span>Give feedback</span>
+                      <span>Show Documentation</span>
                     </div>
                   </a>
                 </li>
@@ -457,6 +458,7 @@
           </div>
 
           <div id="UserPostAllData">
+
         </div>
         </div>
       </div>
@@ -547,6 +549,72 @@
             <div class="modal-body">
               <div class="msg"></div>
               <form id="user-update-form"></form>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+        <!-- documentation data modal -->
+        <div
+        class="modal fade"
+        id="exampleModal3"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel4"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content w-100">
+            <div class="modal-header  bg-light">
+              <h5 class="modal-title  fw-bold" id="exampleModalLabel4">Documentation</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">1. How to Upload A post</h6>
+                    <p class="card-text text-capitalize"> click the button "what's on your mind" that will give you a fill the from and Click the add now button.</p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">2. How to Add a Photo on your Post</h6>
+                    <p class="card-text text-capitalize"> pick any type of photo link from any website, then put the link on the last input field.</p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">3. How to Set a Status</h6>
+                    <p class="card-text text-capitalize"> your default status will be public. if you change the status you need to select the radio field then your status will be changed.</p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">4. How to Set a Avatar</h6>
+                    <p class="card-text text-capitalize"> pick any type of photo link from any website, then put the link on the avatar input field.</p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">4. How to Upload Youtube Video</h6>
+                    <p class="card-text text-capitalize">for Upload Video from youtube. you need the id of any video. this is original youtube video link "https://www.youtube.com/watch?v=<span class="bg-warning">_EjeWOLddgs</span>". look the yellow marked field there has an id. you need to to copy the id paste it on the last input fields</p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">4. How to Upload Facebook Video</h6>
+                    <p class="card-text text-capitalize">for Upload Video from facebook. you need the id of any video. this is original facebook video link "https://www.facebook.com/watch?v=<span class="bg-info">297769083126611</span>". look the yellow marked field there has an id. you need to to copy the id paste it on the last input fields</p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">5. How to Update a Post</h6>
+                    <p class="card-text text-capitalize">for update a post you need to click the <i class="fa-regular fa-pen-to-square"></i> icon. it will give you a form, then re fill the form and submit it.</p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">6. How to delete a Post</h6>
+                    <p class="card-text text-capitalize">for update a post you need to click the <i class="fa-regular fa-trash-can"></i> icon. it will give you a confirm alert. if you click ok your post will be deleted. if you click cancel then your post still in same position.</p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">7. How to Comment on a Post</h6>
+                    <p class="card-text text-capitalize">just click on the comment input then write a comment and submit that </p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">8. How to reply on a Comment</h6>
+                    <p class="card-text text-capitalize">just click on the reply button then write comment and press enter</p>
+                  </div>
+                  
             </div>
           </div>
         </div>

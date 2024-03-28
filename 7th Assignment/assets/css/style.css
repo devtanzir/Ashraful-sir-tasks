@@ -1537,3 +1537,234 @@ span.camera-icon {
     color: #5B626A;
 
 }
+
+/* Comments Area */
+
+.comment-input {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.comment-input.active{
+  align-items: flex-start;
+}
+.comment-input img,.show-comments img{
+  height: 32px;
+  width: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.input-box {
+  background-color: #F0F2F5;
+  width: 100%;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+}
+.input-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 450px;
+}
+.submit-icon{
+  width: 18px;
+  height: 18px;
+  background-image: url("../icons/comments.png");
+  background-position: 0px -543px;
+  cursor: pointer;
+  display: none;
+}
+.comment-input.active .input-box input{
+  width: 575px;
+}
+.comment-input.active .input-box .comments-icons {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 452px;
+}
+.comment-input.active .input-box .comments-icons .submit-icon{
+  display: block;
+}
+.comments-icons ul, .nested-comments-icons ul{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.comments-icons ul li a .comment-bottom-icon,.nested-comments-icons ul li a .comment-bottom-icon  {
+  width: 18px;
+  height: 18px;
+  background-image: url("../icons/comments.png");
+  display: block;
+}
+
+.comments-icons ul li:nth-child(1) .comment-bottom-icon, .nested-comments-icons ul li:nth-child(1) .comment-bottom-icon {
+  background-position: 0px -305px;
+}
+.comments-icons ul li:nth-child(2) .comment-bottom-icon, .nested-comments-icons ul li:nth-child(2) .comment-bottom-icon {
+  background-position: 0px -441px;
+}
+.comments-icons ul li:nth-child(3) .comment-bottom-icon, .nested-comments-icons ul li:nth-child(3) .comment-bottom-icon {
+  background-position: 0px -373px;
+}
+.comments-icons ul li:nth-child(4) .comment-bottom-icon, .nested-comments-icons ul li:nth-child(4) .comment-bottom-icon {
+  background-position: 0px -475px;
+}
+.comments-icons ul li:nth-child(5) .comment-bottom-icon, .nested-comments-icons ul li:nth-child(5) .comment-bottom-icon {
+  background-position: 0px -628px;
+}
+
+/* show-comments */
+
+.show-comments {
+  display: flex;
+  gap: 9px;
+}
+.comment-section {
+  position: relative;
+  margin-bottom: 27px;
+}
+.comment-text {
+  background-color: #F0F2F5;
+  padding: 8px 12px;
+  border-radius: 15px;
+}
+.comment-text span,.nested-comment-text span {
+  font-size: 13px;
+  color: #050505;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-family: "segoe UI";
+}
+.comment-text p,.nested-comment-text p {
+  font-size: 15px;
+  color: #050505;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.show-comment-wrapper {
+  max-width: 95%;
+}
+.nested-comments {
+  position: relative;
+  margin-left: 45px;
+  margin-bottom: 9px;
+}
+.nested-comment-reactions {
+  position: absolute;
+  bottom: 0px;
+  left: 44px;
+  display: flex;
+  transform: translateY(2px);
+  gap: 19px;
+}
+
+.comment-reactions {
+  position: absolute;
+  bottom: 0px;
+  left: 53px;
+  display: flex;
+  transform: translateY(20px);
+  gap: 19px;
+}
+.comment-reactions span, .nested-comment-reactions span {
+font-size: 12px;
+font-weight: 700;
+color: #65676b;
+cursor: pointer;
+font-family: "segoe UI";
+}
+.comment-reactions span:nth-child(1),.nested-comment-reactions span:nth-child(1) {
+font-weight: 400;
+}
+
+.nested-comments .nested-comments-show{
+  display: flex;
+  gap: 9px;
+}
+.nested-comments .nested-comments-show img{
+  border-radius: 50%;
+  object-fit: cover;
+  height: 24px;
+  width: 24px;
+}
+.nested-comments .nested-comments-show .nested-comment-text {
+  background-color: #F0F2F5;
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+.nested-comments-reply {
+  margin-left: 45px;
+  margin-bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.1);
+  transform-origin: top;
+  transition: all .2s linear;
+  height: 0;
+  width: 0;
+}
+.replyIsActive .nested-comments-reply{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  height: auto;
+  width: auto;
+  margin-bottom: 14px;
+}
+.nested-comment-input {
+  display: flex;
+  gap: 9px;
+}
+.nested-comments-reply .nested-comment-input img{
+  height: 24px;
+  width: 24px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nested-comment-input .nested-input-box{
+  background-color: #F0F2F5;
+  width: 100%;
+  border-radius: 17px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+}
+.nested-comment-input .nested-input-box input{
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 519px;
+}
+
+.nested-comments-icons{
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nested-comments-icons .nested-submit-icon{
+  width: 18px;
+height: 18px;
+background-image: url("../icons/comments.png");
+background-position: 0px -543px;
+cursor: pointer;
+}
+
+#exampleModal3 .modal-dialog {
+  max-width: 1020px;
+  margin: 1.75rem auto;
+  margin-top: 60px;
+}

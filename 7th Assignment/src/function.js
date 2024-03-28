@@ -44,6 +44,106 @@ const findContent = (content) => {
   return " ";
 };
 
+const findNestedComments = (comments) => {
+  console.log(comments);
+  if (comments.length > 0) {
+    const nestedComment = comments.map((item) => {
+      return `
+                  <div class="nested-comments">
+                      <div class="nested-comments-show">
+                    <img src="${item.photo}" alt="${item.author}">
+                    <div class="nested-comment-text">
+                      <span>${item.author}</span>
+                      <p>${item.content}</p>
+                    </div>
+                  </div>
+                  <div class="nested-comment-reactions">
+                    <span>${formatPostTime(item.createdAt)}</span>
+                    <span>Like</span>
+                    <span>Reply</span>
+                  </div>
+                  </div>
+      
+      `;
+    });
+    return nestedComment.join(" ");
+  }
+  return " ";
+};
+
+const findComments = (comments, commentedId) => {
+  if (comments.length > 0) {
+    const topComment = comments.reverse().map((item) => {
+      return `<div class="show-comment-wrapper">
+
+      <div class="comment-section">
+
+      <div class="show-comments">
+        <img src="${item.photo}" alt="${item.author}">
+        <div class="comment-text">
+          <span>${item.author}</span>
+          <p>${item.content}</p>
+        </div>
+      </div>
+
+      <div class="comment-reactions">
+        <span>${formatPostTime(item.createdAt)}</span>
+        <span>Like</span>
+        <span onclick=handleReplyClick(event,"${item.id}")>Reply</span>
+      </div>
+      </div>
+
+        <div class="nested-comments-reply">
+               <div class="nested-comment-input">
+                 <img src="https://robiulibneali.com/wp-content/uploads/2023/06/IMG_20210210_225451_686-scaled.jpg" alt="">
+                 <div class="nested-input-box">
+                 <form  onsubmit=replySubmitForm(event,"${
+                   item.id
+                 }","${commentedId}")>
+                   <input type="text" name="reply" placeholder="Write a Reply...">
+                 </form>
+                 <div class="nested-comments-icons">
+                   <ul>
+                     <li> 
+                       <a href="#">
+                       <div class="comment-bottom-icon"></div>
+                     </a>
+                   </li>
+                     <li> 
+                       <a href="#">
+                       <div class="comment-bottom-icon"></div>
+                     </a>
+                   </li>
+                     <li> 
+                       <a href="#">
+                       <div class="comment-bottom-icon"></div>
+                     </a>
+                    </li>
+                      <li> 
+                        <a href="#">
+                        <div class="comment-bottom-icon"></div>
+                      </a>
+                    </li>
+                      <li> 
+                              <a href="#">
+                  <div class="comment-bottom-icon"></div>
+                </a>
+              </li>
+              </ul>
+              <div class="nested-submit-icon"></div>
+            </div>
+            </div>
+          </div>
+          </div>
+          ${findNestedComments(item.nestedComment)}
+        </div>
+        `;
+    });
+    return topComment.join(" ");
+  }
+  return " ";
+};
+
 const postStatusIcon = (status) => {
   if (status == "privet") {
     return `<i class="fa-solid fa-lock only-me-icon"></i>`;
@@ -122,13 +222,13 @@ function formatPostTime(postDate) {
       day: "numeric",
     });
   } else if (days > 1) {
-    return `${days} days ago`;
+    return `${days} d`;
   } else if (days === 1) {
     return "Yesterday";
   } else if (hours >= 1) {
-    return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+    return `${hours} h`;
   } else if (minutes >= 1) {
-    return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
+    return `${minutes} m`;
   } else {
     return "Just now";
   }

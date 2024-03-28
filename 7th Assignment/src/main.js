@@ -253,20 +253,111 @@ const userUpdateForm = document.getElementById("user-update-form");
 /**
  * Get All Users
  */
+
 const getAllUsers = () => {
   const users = getDataLs("users");
 
   let dataList = "";
 
   if (!users) {
-    return (UserPostAllData.innerHTML = `
-        <img src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1711152000&semt=ais" style="width: 100%" alt="no data found"/>
-        `);
+    return (UserPostAllData.innerHTML = `<div class="card w-100">
+              <div class="card-header bg-light">
+                <h5 class="card-title fw-bold text-bg-light">Documentation</h5>
+              </div>
+              <div class="card-body">
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">1. How to Upload A post</h6>
+                  <p class="card-text text-capitalize"> click the button "what's on your mind" that will give you a fill the from and Click the add now button.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">2. How to Add a Photo on your Post</h6>
+                  <p class="card-text text-capitalize"> pick any type of photo link from any website, then put the link on the last input field.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">3. How to Set a Status</h6>
+                  <p class="card-text text-capitalize"> your default status will be public. if you change the status you need to select the radio field then your status will be changed.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">4. How to Set a Avatar</h6>
+                  <p class="card-text text-capitalize"> pick any type of photo link from any website, then put the link on the avatar input field.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">4. How to Upload Youtube Video</h6>
+                  <p class="card-text text-capitalize">for Upload Video from youtube. you need the id of any video. this is original youtube video link "https://www.youtube.com/watch?v=<span class="bg-warning">_EjeWOLddgs</span>". look the yellow marked field there has an id. you need to to copy the id paste it on the last input fields</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">4. How to Upload Facebook Video</h6>
+                  <p class="card-text text-capitalize">for Upload Video from facebook. you need the id of any video. this is original facebook video link "https://www.facebook.com/watch?v=<span class="bg-info">297769083126611</span>". look the yellow marked field there has an id. you need to to copy the id paste it on the last input fields</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">5. How to Update a Post</h6>
+                  <p class="card-text text-capitalize">for update a post you need to click the <i class="fa-regular fa-pen-to-square"></i> icon. it will give you a form, then re fill the form and submit it.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">6. How to delete a Post</h6>
+                  <p class="card-text text-capitalize">for update a post you need to click the <i class="fa-regular fa-trash-can"></i> icon. it will give you a confirm alert. if you click ok your post will be deleted. if you click cancel then your post still in same position.</p>
+                </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">7. How to Comment on a Post</h6>
+                    <p class="card-text text-capitalize">just click on the comment input then write a comment and submit that </p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">8. How to reply on a Comment</h6>
+                    <p class="card-text text-capitalize">just click on the reply button then write comment and press enter</p>
+                  </div>
+                
+              </div>
+            </div>`);
   }
   if (users.length == 0) {
-    return (UserPostAllData.innerHTML = `
-        <img src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1711152000&semt=ais" style="width: 100%" alt="no data found"/>
-        `);
+    return (UserPostAllData.innerHTML = `<div class="card w-100">
+              <div class="card-header bg-light">
+                <h5 class="card-title fw-bold text-bg-light">Documentation</h5>
+              </div>
+              <div class="card-body">
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">1. How to Upload A post</h6>
+                  <p class="card-text text-capitalize"> click the button "what's on your mind" that will give you a fill the from and Click the add now button.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">2. How to Add a Photo on your Post</h6>
+                  <p class="card-text text-capitalize"> pick any type of photo link from any website, then put the link on the last input field.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">3. How to Set a Status</h6>
+                  <p class="card-text text-capitalize"> your default status will be public. if you change the status you need to select the radio field then your status will be changed.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">4. How to Set a Avatar</h6>
+                  <p class="card-text text-capitalize"> pick any type of photo link from any website, then put the link on the avatar input field.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">4. How to Upload Youtube Video</h6>
+                  <p class="card-text text-capitalize">for Upload Video from youtube. you need the id of any video. this is original youtube video link "https://www.youtube.com/watch?v=<span class="bg-warning">_EjeWOLddgs</span>". look the yellow marked field there has an id. you need to to copy the id paste it on the last input fields</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">4. How to Upload Facebook Video</h6>
+                  <p class="card-text text-capitalize">for Upload Video from facebook. you need the id of any video. this is original facebook video link "https://www.facebook.com/watch?v=<span class="bg-info">297769083126611</span>". look the yellow marked field there has an id. you need to to copy the id paste it on the last input fields</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">5. How to Update a Post</h6>
+                  <p class="card-text text-capitalize">for update a post you need to click the <i class="fa-regular fa-pen-to-square"></i> icon. it will give you a form, then re fill the form and submit it.</p>
+                </div>
+                <div class="content-box mb-3">
+                  <h6 class="fw-bold ">6. How to delete a Post</h6>
+                  <p class="card-text text-capitalize">for update a post you need to click the <i class="fa-regular fa-trash-can"></i> icon. it will give you a confirm alert. if you click ok your post will be deleted. if you click cancel then your post still in same position.</p>
+                </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">7. How to Comment on a Post</h6>
+                    <p class="card-text text-capitalize">just click on the comment input then write a comment and submit that </p>
+                  </div>
+                  <div class="content-box mb-3">
+                    <h6 class="fw-bold ">8. How to reply on a Comment</h6>
+                    <p class="card-text text-capitalize">just click on the reply button then write comment and press enter</p>
+                  </div>
+                
+              </div>
+            </div>`);
   }
 
   if (users) {
@@ -376,7 +467,7 @@ const getAllUsers = () => {
                     <a href="#">Elon Musk, Ratan Tata and 550 others</a>
                   </div>
                   <div class="counts">
-                    <a href="#">95 Comments</a>
+                    <a href="#">${item.comments.length} comments</a>
                   </div>
                 </div>
                 <div class="divider-0"></div>
@@ -399,7 +490,51 @@ const getAllUsers = () => {
                   </ul>
                 </div>
                 <div class="divider-0"></div>
-                <div class="comments-area"></div>
+                <div class="comments-area">
+                ${findComments(item.comments, item.id)}
+               
+                <div class="comment-input">
+                    <img src="https://scontent.fdac148-1.fna.fbcdn.net/v/t39.30808-6/324589885_539511854581715_4016618937591353980_n.jpg?stp=dst-jpg_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Fd1D-UW3QtwAX96Z9pw&_nc_ht=scontent.fdac148-1.fna&oh=00_AfD9_34uq2F6lkymiK5r9IGH_qQbrSL8lRGka0HpK2rWSQ&oe=660A4476" alt="">
+                    <div class="input-box">
+                    <form onsubmit=commentSubmitForm(event,"${item.id}")>
+                      <input onblur=handleBlur(event) onfocus=handleFocus(event) name="topComment" type="text" placeholder="Write a Comment...">
+                    </form>
+                    <div class="comments-icons">
+                    <div>
+                      <ul>
+                        <li> 
+                          <a href="#">
+                          <div class="comment-bottom-icon"></div>
+                        </a>
+                      </li>
+                        <li> 
+                          <a href="#">
+                          <div class="comment-bottom-icon"></div>
+                        </a>
+                      </li>
+                        <li> 
+                          <a href="#">
+                          <div class="comment-bottom-icon"></div>
+                        </a>
+                      </li>
+                        <li> 
+                          <a href="#">
+                          <div class="comment-bottom-icon"></div>
+                        </a>
+                      </li>
+                        <li> 
+                          <a href="#">
+                          <div class="comment-bottom-icon"></div>
+                        </a>
+                      </li>
+                      </ul>
+                      </div>
+                      <div class="submit-icon"></div>
+                    </div>
+                    </div>
+                    
+                  </div>
+              </div>
               </div>
             </div>
             
@@ -504,6 +639,104 @@ const deleteUser = (id) => {
 
 getAllUsers();
 
+const commentSubmitForm = (event, id) => {
+  event.preventDefault();
+  // get form data from formData object
+
+  let formData = new FormData(event.target);
+
+  let { topComment } = Object.fromEntries(formData.entries());
+
+  if (!topComment) {
+    return false;
+  } else {
+    const allData = getDataLs("users");
+    const updatedData = {
+      id: createId(),
+      author: "Tanzir Ibne Ali",
+      photo:
+        "https://scontent.fdac148-1.fna.fbcdn.net/v/t39.30808-6/324589885_539511854581715_4016618937591353980_n.jpg?stp=dst-jpg_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Fd1D-UW3QtwAX96Z9pw&_nc_ht=scontent.fdac148-1.fna&oh=00_AfD9_34uq2F6lkymiK5r9IGH_qQbrSL8lRGka0HpK2rWSQ&oe=660A4476",
+      content: topComment,
+      nestedComment: [],
+      createdAt: Date.now(),
+    };
+    const updatedIndex = allData.findIndex((item) => item.id === id);
+    allData[updatedIndex] = {
+      ...allData[updatedIndex],
+      ...allData[updatedIndex].comments.push(updatedData),
+    };
+    localStorage.setItem("users", JSON.stringify(allData));
+    event.target.reset();
+    getAllUsers();
+  }
+};
+
+const handleFocus = (e) => {
+  e.target.parentElement.parentElement.parentElement.classList.add("active");
+};
+
+const handleBlur = (e) => {
+  if (
+    e.target.parentElement.parentElement.parentElement.classList.contains(
+      "active"
+    )
+  ) {
+    e.target.parentElement.parentElement.parentElement.classList.remove(
+      "active"
+    );
+    console.log(e.target.value);
+  } else {
+    return false;
+  }
+};
+
+const handleReplyClick = (e, id) => {
+  e.target.parentElement.parentElement.parentElement.classList.add(
+    "replyIsActive"
+  );
+};
+const replySubmitForm = (event, id, commentedId) => {
+  event.preventDefault();
+
+  let formData = new FormData(event.target);
+
+  let { reply } = Object.fromEntries(formData.entries());
+
+  if (!reply) {
+    return false;
+  } else {
+    const allData = getDataLs("users");
+    const updatedData = {
+      id: createId(),
+      author: "Developer Robiul",
+      photo:
+        "https://robiulibneali.com/wp-content/uploads/2023/06/IMG_20210210_225451_686-scaled.jpg",
+      content: reply,
+      createdAt: Date.now(),
+    };
+
+    const updatedIndex = allData.findIndex((item) => item.id === commentedId);
+    const updatedComment = allData[updatedIndex].comments.findIndex(
+      (item) => item.id === id
+    );
+
+    allData[updatedIndex].comments[updatedComment] = {
+      ...allData[updatedIndex].comments[updatedComment],
+      ...allData[updatedIndex].comments[updatedComment].nestedComment.push(
+        updatedData
+      ),
+    };
+
+    localStorage.setItem("users", JSON.stringify(allData));
+    event.target.reset();
+    event.target.parentElement.parentElement.parentElement.parentElement.classList.remove(
+      "replyIsActive"
+    );
+
+    getAllUsers();
+  }
+};
+
 userForm.onsubmit = (e) => {
   e.preventDefault();
   const modalClose = document.getElementById("modalCloseBtn");
@@ -528,6 +761,7 @@ userForm.onsubmit = (e) => {
       status,
       link,
       avatar,
+      comments: [],
       createdAt: Date.now(),
     });
     msg.innerHTML = setAlert("Data Stable", "success");
