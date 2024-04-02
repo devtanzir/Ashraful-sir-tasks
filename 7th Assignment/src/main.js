@@ -1,254 +1,74 @@
-// let userPost = document.getElementById("UserPostAllData");
-
-// users.map((item) => {
-//   return (userPost.innerHTML += `          <div class="user-post">
-
-//             <div class="user-post-header">
-//               <div class="post-info">
-//                 <img src=${item.avatar} alt="" />
-//                 <div class="user-details">
-//                   <a class="author" href="#">${item.userName}</a>
-//                   <span
-//                     >${item.createdAt}
-//                     <svg
-//                       fill="currentColor"
-//                       viewBox="0 0 16 16"
-//                       width="1em"
-//                       height="1em"
-//                       class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6 x1kpxq89 xsmyaan"
-//                       title="Shared with Public"
-//                     >
-//                       <title>Shared with Public</title>
-//                       <g fill-rule="evenodd" transform="translate(-448 -544)">
-//                         <g>
-//                           <path
-//                             d="M109.5 408.5c0 3.23-2.04 5.983-4.903 7.036l.07-.036c1.167-1 1.814-2.967 2-3.834.214-1 .303-1.3-.5-1.96-.31-.253-.677-.196-1.04-.476-.246-.19-.356-.59-.606-.73-.594-.337-1.107.11-1.954.223a2.666 2.666 0 0 1-1.15-.123c-.007 0-.007 0-.013-.004l-.083-.03c-.164-.082-.077-.206.006-.36h-.006c.086-.17.086-.376-.05-.529-.19-.214-.54-.214-.804-.224-.106-.003-.21 0-.313.004l-.003-.004c-.04 0-.084.004-.124.004h-.037c-.323.007-.666-.034-.893-.314-.263-.353-.29-.733.097-1.09.28-.26.863-.8 1.807-.22.603.37 1.166.667 1.666.5.33-.11.48-.303.094-.87a1.128 1.128 0 0 1-.214-.73c.067-.776.687-.84 1.164-1.2.466-.356.68-.943.546-1.457-.106-.413-.51-.873-1.28-1.01a7.49 7.49 0 0 1 6.524 7.434"
-//                             transform="translate(354 143.5)"
-//                           ></path>
-//                           <path
-//                             d="M104.107 415.696A7.498 7.498 0 0 1 94.5 408.5a7.48 7.48 0 0 1 3.407-6.283 5.474 5.474 0 0 0-1.653 2.334c-.753 2.217-.217 4.075 2.29 4.075.833 0 1.4.561 1.333 2.375-.013.403.52 1.78 2.45 1.89.7.04 1.184 1.053 1.33 1.74.06.29.127.65.257.97a.174.174 0 0 0 .193.096"
-//                             transform="translate(354 143.5)"
-//                           ></path>
-//                           <path
-//                             fill-rule="nonzero"
-//                             d="M110 408.5a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-1 0a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"
-//                             transform="translate(354 143.5)"
-//                           ></path>
-//                         </g>
-//                       </g>
-//                     </svg>
-//                     </span>
-//                 </div>
-//               </div>
-//               <div class="post-menu">
-//                 <button>
-//                   <svg
-//                     fill="currentColor"
-//                     viewBox="0 0 20 20"
-//                     width="1em"
-//                     height="1em"
-//                     class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6 x1qx5ct2 xw4jnvo"
-//                   >
-//                     <g fill-rule="evenodd" transform="translate(-446 -350)">
-//                       <path
-//                         d="M458 360a2 2 0 1 1-4 0 2 2 0 0 1 4 0m6 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0"
-//                       ></path>
-//                     </g>
-//                   </svg>
-//                 </button>
-//               </div>
-//             </div>
-//             <div class="post-body">
-//               <div class="post-content">
-//                 <p>
-//                   ${item.description}
-//                 </p>
-//               </div>
-//             </div>
-//             <div class="post-media">
-//             ${findImage(item.postImage) !== null && findImage(item.postImage)}
-
-//             </div>
-//                 ${findVideo(item.video)}
-//             <div class="post-comments">
-//               <div class="comments-header">
-//                 <div class="reaction">
-//                   <div class="reaction-icon">
-//                     <ul>
-//                       <li>
-//                         <a href="#">
-//                           <svg
-//                             xmlns="http://www.w3.org/2000/svg"
-//                             xmlns:xlink="http://www.w3.org/1999/xlink"
-//                             viewBox="0 0 16 16"
-//                           >
-//                             <defs>
-//                               <linearGradient
-//                                 id="a"
-//                                 x1="50%"
-//                                 x2="50%"
-//                                 y1="0%"
-//                                 y2="100%"
-//                               >
-//                                 <stop offset="0%" stop-color="#FF6680" />
-//                                 <stop offset="100%" stop-color="#E61739" />
-//                               </linearGradient>
-//                               <filter
-//                                 id="c"
-//                                 width="118.8%"
-//                                 height="118.8%"
-//                                 x="-9.4%"
-//                                 y="-9.4%"
-//                                 filterUnits="objectBoundingBox"
-//                               >
-//                                 <feGaussianBlur
-//                                   in="SourceAlpha"
-//                                   result="shadowBlurInner1"
-//                                   stdDeviation="1"
-//                                 />
-//                                 <feOffset
-//                                   dy="-1"
-//                                   in="shadowBlurInner1"
-//                                   result="shadowOffsetInner1"
-//                                 />
-//                                 <feComposite
-//                                   in="shadowOffsetInner1"
-//                                   in2="SourceAlpha"
-//                                   k2="-1"
-//                                   k3="1"
-//                                   operator="arithmetic"
-//                                   result="shadowInnerInner1"
-//                                 />
-//                                 <feColorMatrix
-//                                   in="shadowInnerInner1"
-//                                   values="0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0"
-//                                 />
-//                               </filter>
-//                               <path id="b" d="M8 0a8 8 0 100 16A8 8 0 008 0z" />
-//                             </defs>
-//                             <g fill="none">
-//                               <use fill="url(#a)" xlink:href="#b" />
-//                               <use
-//                                 fill="black"
-//                                 filter="url(#c)"
-//                                 xlink:href="#b"
-//                               />
-//                               <path
-//                                 fill="white"
-//                                 d="M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41"
-//                               />
-//                             </g>
-//                           </svg>
-//                         </a>
-//                       </li>
-//                       <li>
-//                         <a href="#">
-//                           <svg
-//                             xmlns="http://www.w3.org/2000/svg"
-//                             xmlns:xlink="http://www.w3.org/1999/xlink"
-//                             viewBox="0 0 16 16"
-//                           >
-//                             <defs>
-//                               <linearGradient
-//                                 id="a"
-//                                 x1="50%"
-//                                 x2="50%"
-//                                 y1="0%"
-//                                 y2="100%"
-//                               >
-//                                 <stop offset="0%" stop-color="#18AFFF" />
-//                                 <stop offset="100%" stop-color="#0062DF" />
-//                               </linearGradient>
-//                               <filter
-//                                 id="c"
-//                                 width="118.8%"
-//                                 height="118.8%"
-//                                 x="-9.4%"
-//                                 y="-9.4%"
-//                                 filterUnits="objectBoundingBox"
-//                               >
-//                                 <feGaussianBlur
-//                                   in="SourceAlpha"
-//                                   result="shadowBlurInner1"
-//                                   stdDeviation="1"
-//                                 />
-//                                 <feOffset
-//                                   dy="-1"
-//                                   in="shadowBlurInner1"
-//                                   result="shadowOffsetInner1"
-//                                 />
-//                                 <feComposite
-//                                   in="shadowOffsetInner1"
-//                                   in2="SourceAlpha"
-//                                   k2="-1"
-//                                   k3="1"
-//                                   operator="arithmetic"
-//                                   result="shadowInnerInner1"
-//                                 />
-//                                 <feColorMatrix
-//                                   in="shadowInnerInner1"
-//                                   values="0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0"
-//                                 />
-//                               </filter>
-//                               <path
-//                                 id="b"
-//                                 d="M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z"
-//                               />
-//                             </defs>
-//                             <g fill="none">
-//                               <use fill="url(#a)" xlink:href="#b" />
-//                               <use
-//                                 fill="black"
-//                                 filter="url(#c)"
-//                                 xlink:href="#b"
-//                               />
-//                               <path
-//                                 fill="white"
-//                                 d="M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z"
-//                               />
-//                             </g>
-//                           </svg>
-//                         </a>
-//                       </li>
-//                     </ul>
-//                   </div>
-//                   <a href="#">Kajal Datta, Sufia Sepu and 550 others</a>
-//                 </div>
-//                 <div class="counts">
-//                   <a href="#">95 Comments</a>
-//                 </div>
-//               </div>
-//               <div class="divider-0"></div>
-//               <div class="comments-menu">
-//                 <ul>
-//                   <li>
-//                     <span class="comment-icon"></span>
-//                     <span>Like</span>
-//                   </li>
-
-//                   <li>
-//                     <span class="comment-icon"></span>
-//                     <span>Comment</span>
-//                   </li>
-
-//                   <li>
-//                     <span class="comment-icon"></span>
-//                     <span>Share</span>
-//                   </li>
-//                 </ul>
-//               </div>
-//               <div class="divider-0"></div>
-//               <div class="comments-area"></div>
-//             <!-- ? -->
-//             </div>
-//             <!-- ??/! -->
-//           </div>`);
-// });
-
 const msg = document.querySelector(".msg");
 const userForm = document.getElementById("user-form");
 const UserPostAllData = document.getElementById("UserPostAllData");
 const userUpdateForm = document.getElementById("user-update-form");
+
+const handleNavbarActive = (e) => {
+  if (e.srcElement.nodeName == "LI") {
+    const linksItem = document.getElementById("all-menu-links");
+    const menuItems = linksItem.children;
+
+    // Remove "active" class from all menu items
+    for (let i = 0; i < menuItems.length; i++) {
+      menuItems[i].classList.remove("active");
+    }
+
+    e.target.classList.add("active");
+    handleNavbar();
+  }
+
+  return false;
+};
+
+const handleNavbar = () => {
+  const homeIcon = document.getElementById("home-icon");
+  const friendsIcon = document.getElementById("friends-icon");
+  const marketplace = document.getElementById("marketplace");
+  const groups = document.getElementById("groups");
+  if (homeIcon.parentElement.classList.contains("active")) {
+    homeIcon.innerHTML = `<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--primary-button-background);"><path d="M9.464 1.286C10.294.803 11.092.5 12 .5c.908 0 1.707.303 2.537.786.795.462 1.7 1.142 2.815 1.977l2.232 1.675c1.391 1.042 2.359 1.766 2.888 2.826.53 1.059.53 2.268.528 4.006v4.3c0 1.355 0 2.471-.119 3.355-.124.928-.396 1.747-1.052 2.403-.657.657-1.476.928-2.404 1.053-.884.119-2 .119-3.354.119H7.93c-1.354 0-2.471 0-3.355-.119-.928-.125-1.747-.396-2.403-1.053-.656-.656-.928-1.475-1.053-2.403C1 18.541 1 17.425 1 16.07v-4.3c0-1.738-.002-2.947.528-4.006.53-1.06 1.497-1.784 2.888-2.826L6.65 3.263c1.114-.835 2.02-1.515 2.815-1.977zM10.5 13A1.5 1.5 0 0 0 9 14.5V21h6v-6.5a1.5 1.5 0 0 0-1.5-1.5h-3z"></path></svg>`;
+  } else {
+    homeIcon.innerHTML = ` 
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--secondary-icon);"><path d="M8.99 23H7.93c-1.354 0-2.471 0-3.355-.119-.928-.125-1.747-.396-2.403-1.053-.656-.656-.928-1.475-1.053-2.403C1 18.541 1 17.425 1 16.07v-4.3c0-1.738-.002-2.947.528-4.006.53-1.06 1.497-1.784 2.888-2.826L6.65 3.263c1.114-.835 2.02-1.515 2.815-1.977C10.294.803 11.092.5 12 .5c.908 0 1.707.303 2.537.786.795.462 1.7 1.142 2.815 1.977l2.232 1.675c1.391 1.042 2.359 1.766 2.888 2.826.53 1.059.53 2.268.528 4.006v4.3c0 1.355 0 2.471-.119 3.355-.124.928-.396 1.747-1.052 2.403-.657.657-1.476.928-2.404 1.053-.884.119-2 .119-3.354.119H8.99zM7.8 4.9l-2 1.5C4.15 7.638 3.61 8.074 3.317 8.658 3.025 9.242 3 9.937 3 12v4c0 1.442.002 2.424.101 3.159.095.706.262 1.033.485 1.255.223.223.55.39 1.256.485.734.099 1.716.1 3.158.1V14.5a2.5 2.5 0 0 1 2.5-2.5h3a2.5 2.5 0 0 1 2.5 2.5V21c1.443 0 2.424-.002 3.159-.101.706-.095 1.033-.262 1.255-.485.223-.222.39-.55.485-1.256.099-.734.101-1.716.101-3.158v-4c0-2.063-.025-2.758-.317-3.342-.291-.584-.832-1.02-2.483-2.258l-2-1.5c-1.174-.881-1.987-1.489-2.67-1.886C12.87 2.63 12.425 2.5 12 2.5c-.425 0-.87.13-1.53.514-.682.397-1.495 1.005-2.67 1.886zM14 21v-6.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V21h4z"></path></svg>`;
+  }
+  if (friendsIcon.parentElement.classList.contains("active")) {
+    friendsIcon.innerHTML = `<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--primary-button-background);"><path d="M8 2.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zM17.5 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM5.25 13A4.75 4.75 0 0 0 .5 17.75 3.25 3.25 0 0 0 3.75 21h8.5a3.25 3.25 0 0 0 3.25-3.25A4.75 4.75 0 0 0 10.75 13h-5.5zm12.394 1.5a1 1 0 0 0-.95 1.31c.198.61.306 1.261.306 1.94 0 .661-.135 1.289-.377 1.858a1 1 0 0 0 .92 1.392H20.7a2.8 2.8 0 0 0 2.8-2.8 3.7 3.7 0 0 0-3.7-3.7h-2.156z"></path></svg>`;
+  } else {
+    friendsIcon.innerHTML = `<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--secondary-icon)"><path d="M8 2.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zM5.5 7a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0zm-.25 6A4.75 4.75 0 0 0 .5 17.75 3.25 3.25 0 0 0 3.75 21h8.5a3.25 3.25 0 0 0 3.25-3.25A4.75 4.75 0 0 0 10.75 13h-5.5zM2.5 17.75A2.75 2.75 0 0 1 5.25 15h5.5a2.75 2.75 0 0 1 2.75 2.75c0 .69-.56 1.25-1.25 1.25h-8.5c-.69 0-1.25-.56-1.25-1.25zM14 9.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0zM17.5 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm0 6.5a1 1 0 1 0 0 2h2.3a1.7 1.7 0 0 1 1.7 1.7.8.8 0 0 1-.8.8h-3.2a1 1 0 1 0 0 2h3.2a2.8 2.8 0 0 0 2.8-2.8 3.7 3.7 0 0 0-3.7-3.7h-2.3z"></path></svg>`;
+  }
+  if (marketplace.parentElement.classList.contains("active")) {
+    marketplace.innerHTML = `
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--primary-button-background);"><path d="M4.581 1c-1.38 0-2.597.905-2.993 2.227l-.816 2.72A6.45 6.45 0 0 0 .5 7.8c0 1.425.573 2.716 1.501 3.655L2 11.5v4.57c0 1.355 0 2.471.119 3.355.124.928.396 1.747 1.053 2.403.656.657 1.475.928 2.403 1.053.884.12 2 .119 3.354.119h6.142c1.354 0 2.47 0 3.354-.119.928-.125 1.747-.396 2.403-1.053.657-.656.928-1.475 1.053-2.403.12-.884.119-2 .119-3.354V11.5l-.001-.045A5.183 5.183 0 0 0 23.5 7.8a6.47 6.47 0 0 0-.272-1.854l-.816-2.719A3.125 3.125 0 0 0 19.42 1H4.58zM20 12.716V16c0 1.442-.002 2.424-.1 3.159-.096.706-.263 1.033-.486 1.255-.222.223-.55.39-1.255.485-.551.074-1.24.094-2.159.1V17.5a2.5 2.5 0 0 0-2.5-2.5h-3A2.5 2.5 0 0 0 8 17.5v3.498c-.918-.005-1.608-.025-2.159-.099-.706-.095-1.033-.262-1.255-.485-.223-.222-.39-.55-.485-1.255C4.002 18.424 4 17.443 4 16v-3.284A5.192 5.192 0 0 0 5.7 13a5.18 5.18 0 0 0 3.15-1.062A5.18 5.18 0 0 0 12 13a5.18 5.18 0 0 0 3.15-1.062A5.18 5.18 0 0 0 18.3 13a5.2 5.2 0 0 0 1.7-.284zM14 21h-4v-3.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V21z"></path></svg>`;
+  } else {
+    marketplace.innerHTML = `
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--secondary-icon)"><path d="M1.588 3.227A3.125 3.125 0 0 1 4.58 1h14.84c1.38 0 2.597.905 2.993 2.227l.816 2.719a6.47 6.47 0 0 1 .272 1.854A5.183 5.183 0 0 1 22 11.455v4.615c0 1.355 0 2.471-.119 3.355-.125.928-.396 1.747-1.053 2.403-.656.657-1.475.928-2.403 1.053-.884.12-2 .119-3.354.119H8.929c-1.354 0-2.47 0-3.354-.119-.928-.125-1.747-.396-2.403-1.053-.657-.656-.929-1.475-1.053-2.403-.12-.884-.119-2-.119-3.354V11.5l.001-.045A5.184 5.184 0 0 1 .5 7.8c0-.628.092-1.252.272-1.854l.816-2.719zM10 21h4v-3.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V21zm6-.002c.918-.005 1.608-.025 2.159-.099.706-.095 1.033-.262 1.255-.485.223-.222.39-.55.485-1.255.099-.735.101-1.716.101-3.159v-3.284a5.195 5.195 0 0 1-1.7.284 5.18 5.18 0 0 1-3.15-1.062A5.18 5.18 0 0 1 12 13a5.18 5.18 0 0 1-3.15-1.062A5.18 5.18 0 0 1 5.7 13a5.2 5.2 0 0 1-1.7-.284V16c0 1.442.002 2.424.1 3.159.096.706.263 1.033.486 1.255.222.223.55.39 1.255.485.551.074 1.24.094 2.159.1V17.5a2.5 2.5 0 0 1 2.5-2.5h3a2.5 2.5 0 0 1 2.5 2.5v3.498zM4.581 3c-.497 0-.935.326-1.078.802l-.815 2.72A4.45 4.45 0 0 0 2.5 7.8a3.2 3.2 0 0 0 5.6 2.117 1 1 0 0 1 1.5 0A3.19 3.19 0 0 0 12 11a3.19 3.19 0 0 0 2.4-1.083 1 1 0 0 1 1.5 0A3.2 3.2 0 0 0 21.5 7.8c0-.434-.063-.865-.188-1.28l-.816-2.72A1.125 1.125 0 0 0 19.42 3H4.58z"></path></svg>`;
+  }
+  if (groups.parentElement.classList.contains("active")) {
+    groups.innerHTML = `<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--primary-button-background);"><path d="M12 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path><path d="M12 23.5C5.649 23.5.5 18.351.5 12S5.649.5 12 .5 23.5 5.649 23.5 12 18.351 23.5 12 23.5zM3.373 8.017a4 4 0 0 1 0 7.966 9.523 9.523 0 0 0 1.948 2.773A5.002 5.002 0 0 1 10 15.523h4a5.002 5.002 0 0 1 4.679 3.233 9.523 9.523 0 0 0 1.948-2.773 4 4 0 0 1 0-7.966A9.501 9.501 0 0 0 12 2.5a9.501 9.501 0 0 0-8.627 5.517z"></path></svg>`;
+  } else {
+    groups.innerHTML = `<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--secondary-icon)"><path d="M12 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm-2 4a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path><path d="M.5 12C.5 5.649 5.649.5 12 .5S23.5 5.649 23.5 12 18.351 23.5 12 23.5.5 18.351.5 12zm2.21-2a9.537 9.537 0 0 0 0 3.993l.3.007A2 2 0 0 0 3 10h-.29zm.663-1.983a4 4 0 0 1 0 7.966 9.523 9.523 0 0 0 1.948 2.773A5.002 5.002 0 0 1 10 15.523h4a5.002 5.002 0 0 1 4.679 3.233 9.523 9.523 0 0 0 1.948-2.773 4 4 0 0 1 0-7.966A9.501 9.501 0 0 0 12 2.5a9.501 9.501 0 0 0-8.627 5.517zM21.5 12a9.55 9.55 0 0 0-.212-2.007l-.265.007H21a2 2 0 0 0-.01 4l.3-.007c.138-.643.21-1.31.21-1.993zM12 21.5a9.455 9.455 0 0 0 4.97-1.402A3 3 0 0 0 14 17.523h-4a3 3 0 0 0-2.97 2.575A9.456 9.456 0 0 0 12 21.5z"></path></svg>`;
+  }
+  return false;
+};
+handleNavbar();
+
+const handleUserMenu = () => {
+  const dropdownController = document.getElementById("dropdownController");
+  dropdownController.classList.toggle("activeUserMenu");
+};
+
+const handleShowMore = (e) => {
+  const fbSidebar = document.querySelector(".fb-home-body-sidebar");
+  fbSidebar.classList.toggle("showNow");
+  const seeMoreLess = document.getElementById("see-less");
+
+  if (seeMoreLess.innerHTML === "See more") {
+    return (seeMoreLess.innerHTML = "See less");
+  }
+  if (seeMoreLess.innerHTML === "See less") {
+    return (seeMoreLess.innerHTML = "See more");
+  }
+};
 
 /**
  * Get All Users
@@ -494,7 +314,7 @@ const getAllUsers = () => {
                 ${findComments(item.comments, item.id)}
                
                 <div class="comment-input">
-                    <img src="https://scontent.fdac148-1.fna.fbcdn.net/v/t39.30808-6/324589885_539511854581715_4016618937591353980_n.jpg?stp=dst-jpg_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Fd1D-UW3QtwAX96Z9pw&_nc_ht=scontent.fdac148-1.fna&oh=00_AfD9_34uq2F6lkymiK5r9IGH_qQbrSL8lRGka0HpK2rWSQ&oe=660A4476" alt="">
+                    <img src="https://www.svgrepo.com/download/192244/man-user.svg" alt="">
                     <div class="input-box">
                     <form onsubmit=commentSubmitForm(event,"${item.id}")>
                       <input onblur=handleBlur(event) onfocus=handleFocus(event) name="topComment" type="text" placeholder="Write a Comment...">
@@ -654,8 +474,7 @@ const commentSubmitForm = (event, id) => {
     const updatedData = {
       id: createId(),
       author: "Tanzir Ibne Ali",
-      photo:
-        "https://scontent.fdac148-1.fna.fbcdn.net/v/t39.30808-6/324589885_539511854581715_4016618937591353980_n.jpg?stp=dst-jpg_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Fd1D-UW3QtwAX96Z9pw&_nc_ht=scontent.fdac148-1.fna&oh=00_AfD9_34uq2F6lkymiK5r9IGH_qQbrSL8lRGka0HpK2rWSQ&oe=660A4476",
+      photo: "https://www.svgrepo.com/download/192244/man-user.svg",
       content: topComment,
       nestedComment: [],
       createdAt: Date.now(),

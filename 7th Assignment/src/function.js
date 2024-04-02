@@ -45,7 +45,6 @@ const findContent = (content) => {
 };
 
 const findNestedComments = (comments) => {
-  console.log(comments);
   if (comments.length > 0) {
     const nestedComment = comments.map((item) => {
       return `
