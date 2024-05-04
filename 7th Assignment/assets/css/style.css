@@ -131,9 +131,9 @@ ul {
 p{
   margin-bottom: 0;
 }
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
   display: none;
-}
+} */
 
 /**
  * Create custom css property
@@ -791,14 +791,14 @@ color: inherit;
   width: 60%;
   display: flex;
   justify-content: center;
+  height: 91vh;
+  overflow-y: scroll;
 }
 
 .fb-home-timeline {
   width: 675px;
-  height: 100vh;
-  overflow-y: scroll;
 }
-.fb-home-timeline::-webkit-scrollbar {
+.fb-home-timeline-area::-webkit-scrollbar {
 display: none;
 }
 
@@ -867,6 +867,12 @@ display: none;
   height: 24px;
   background-image: url("../icons/post.png");
   background-position: 0px -125px;
+}
+.fb-profile-body-details .create-post-footer ul li:nth-child(3) .post-icon {
+  width: 23px;
+  height: 23px;
+  background-image: url("../icons/post.png");
+  background-position: 0px 305px;
 }
 
 .create-post-footer ul li {
@@ -1608,7 +1614,7 @@ color: #050505;
   right: 30px;
   padding: 6px 12px;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
   border: 0px;
   border-radius: 5px;
   cursor: pointer;
@@ -1651,11 +1657,26 @@ span.camera-icon {
 }
 .fb-profile-details .profile-info .profile-desc {
   margin-bottom: 20px;
+  margin-left: 8px;
 }
 
 .fb-profile-details .profile-info .profile-desc h1 {
-  font-size: 36px;
+  font-size: 32px;
   font-family: inherit;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.profile-follow-details {
+  margin-bottom: 5px;
+}
+.profile-followers {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(101, 103, 107);
+  cursor: pointer;
+}
+.profile-followers:hover {
+ text-decoration: underline;
 }
 
 .fb-profile-details .profile-info .profile-desc .profile-friends-list ul {
@@ -1663,7 +1684,7 @@ span.camera-icon {
 }
 
 .fb-profile-details .profile-info .profile-desc .profile-friends-list ul li {
-  margin-left: -5px;
+  margin-left: -10px;
   cursor: pointer;
 }
 
@@ -1681,7 +1702,33 @@ span.camera-icon {
   border: 2px solid #fff;
   border-radius: 50%;
 }
-
+.profile-photo{
+  position: relative;
+}
+.profile-photo .profile-img-icon {
+  background-color: #E4E6EB;
+  display: inline-block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 13px;
+  right: 6px;
+  cursor: pointer;
+}
+.profile-photo .profile-img-icon:hover {
+background-color: #D8DADF;
+}
+.profile-photo .profile-img-icon .camera-icon {
+  display: block;
+  width: 20px;
+  height: 22px;
+  background-image: url("../../assets/icons/profile.png");
+  background-position: 0px -128px;
+}
 .profile-photo img {
   width: 180px;
   height: 180px;
@@ -1695,14 +1742,15 @@ span.camera-icon {
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-  width: 500px;
+  width: 442px;
 }
 
-.profile-action button {
+.profile-action button,.three-dot {
   padding: 7px 12px;
-  font-size: 16px;
+ font-size: 15px;
+ font-weight: 600;
   font-family: inherit;
-  background-color: #f0f2f5;
+  background-color: #E4E6EB;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1711,6 +1759,10 @@ span.camera-icon {
   align-items: center;
   gap: 5px;
 }
+.profile-action button:hover,
+.three-dot:hover {
+  background-color: #D8DADF;
+}
 
 .profile-action button span:first-child {
   width: 18px;
@@ -1718,18 +1770,27 @@ span.camera-icon {
   display: block;
 }
 
-.profile-action button:nth-child(1) span.follow-icon {
-  background-image: url("../icons/profile.png");
+.profile-action button:nth-child(1) {
+  background-color: #0866FF;
+ color: white;
+}
+.profile-action button:nth-child(1):hover {
+  background-color: #0861F2;
+}
+.profile-action button:nth-child(1) span.addStory-icon {
+  background-image: url("../icons/AqoGWewwdNN.png");
+  filter: invert(100%);
 }
 
 .profile-action button:nth-child(2) span:first-child {
-  background-image: url("../icons/profile.png");
-  background-position: 0px 187px;
+  background-image: url("../icons/FXssAtoCaUc.png");
+  background-position: 0px 96px;
 }
 
 .profile-action button:nth-child(3) span:first-child {
-  background-image: url("../icons/profile.png");
-  background-position: 0px 120px;
+  background-image: url("../icons/lCei7Cynliu.png");
+  width: 21px;
+  background-position: 0px 638px;
 }
 
 .fb-profile-body {
@@ -1737,11 +1798,172 @@ span.camera-icon {
   width: 100%;
   background-color: #f0f2f5;
 }
+.fb-profile-body-details {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+.intro-section h4{
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(5, 5, 5);
+  margin-bottom: 0;
+}
+
+.intro-section button,
+.intro-section .bio-section button {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(5, 5, 5);
+  width: 100%;
+  background-color: #E4E6EB;
+  border: none;
+  outline: none;
+  padding: 5px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.intro-section button:hover {
+  background-color: #D8DADF;
+}
+.bio-section p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #050505;
+  text-align: center;
+}
+.bio-section .bio-inner textarea {
+  width: 100%;
+  height: 80px;
+  background: #F0F2F5;
+  border: 1px solid #CED0D4;
+  border-radius: 6px;
+  color: #050505;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px;
+  text-align: center;
+  outline: none;
+  resize: none;
+}
+.bio-section .bio-inner span.character-counter {
+  font-size: 13px;
+  font-weight: 400;
+  color: #65676b;
+  display: block;
+  text-align: end;
+}
+.bio-save-btn{
+  background-color: #0866FF !important;
+  color: white !important;
+  cursor: pointer;
+}
+.not-allowed.bio-save-btn{
+  background-color: #E4E6EB !important;
+  color: #bcc0c4 !important;
+  cursor: not-allowed !important;
+}
+.status-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../icons/HgfBXTEArfp.png");
+  background-repeat: no-repeat;
+  background-position: 0 -21px;
+}
+.buttons-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+.submit-buttons button{
+  padding: 5px 13px !important;
+}
+.bio-status {
+  display: flex;
+  gap: 12px;
+}
+.bio-status p{
+  font-size: 15px;
+  font-weight: 400;
+  color: #050505;
+}
+.submit-buttons {
+  display: flex;
+  gap: 5px;
+}
+.bio-section .bio-inner textarea:hover{
+  background: #E4E6E8;
+}
+.bio-section .bio-inner textarea:focus{
+border-color: #0866FF;
+background-color: #fff;
+}
+.intro-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.intro-section ul li a  {
+  display: flex;
+  /* gap: 12px; */
+  font-size: 15px;
+  font-weight: 400;
+  color: #050505;
+}
+.intro-section ul li a span:nth-child(2)  {
+  font-weight: 600;
+}
+.intro-section ul li a span.intro-list-icon{
+  display: block;
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../icons/Q9Qu4uLgzdm.png");
+  background-repeat: no-repeat;
+  filter: invert(59%) sepia(11%) saturate(200%) saturate(135%) hue-rotate(176deg) brightness(96%) contrast(94%);
+}
+.intro-section ul li:nth-child(2) a span.intro-list-icon{
+  background-image: url("../icons/jV4o8nAgIEh.png");
+}
+.intro-section ul li:nth-child(3) a span.intro-list-icon{
+  background-image: url("../icons/VMZOiSIJIwn.png");
+}
+.intro-section ul li:nth-child(4) a span.intro-list-icon{
+  background-image: url("../icons/-e1Al38ZrZL.png");
+}
+.intro-section ul li:nth-child(5) a span.intro-list-icon{
+  background-image: url("../icons/S0aTxIHuoYO.png");
+}
+.intro-section ul li:nth-child(6) a span.intro-list-icon{
+  background-image: url("../icons/LPnnw6HJjJT.png");
+}
+.intro-section ul li:nth-child(7) a span.intro-list-icon{
+  background-image: url("../icons/toH9huWBEUQ.png");
+}
+.intro-section ul li:nth-child(6) a,.intro-section ul li:nth-child(7) a {
+  color: #0064d1  ;
+}
+.intro-section ul li:nth-child(6) a:hover,.intro-section ul li:nth-child(7) a:hover {
+  text-decoration: underline;
+}
 
 .fb-profile-menu {
   width: 1200px;
   margin: auto;
   border-top: 1px solid #ccced2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .fb-profile-menu ul {
@@ -1752,10 +1974,12 @@ span.camera-icon {
 }
 
 .fb-profile-menu ul li a {
-  padding: 20px 20px;
+  padding: 20px 10px;
   display: block;
-  font-size: 16px;
+  font-size: 15px;
   font-family: inherit;
+  font-weight: 600;
+  color: #65676b;
 }
 
 .only-me-icon{
@@ -1996,3 +2220,6 @@ cursor: pointer;
 }
 
 
+/* 
+Profile Section
+*/

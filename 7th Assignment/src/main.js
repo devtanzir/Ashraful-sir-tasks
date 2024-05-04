@@ -2,7 +2,93 @@ const msg = document.querySelector(".msg");
 const userForm = document.getElementById("user-form");
 const UserPostAllData = document.getElementById("UserPostAllData");
 const userUpdateForm = document.getElementById("user-update-form");
+const bioSection = document.querySelector(".bio-section");
+const addBio = document.getElementById("addBio");
+const showBio = document.getElementById("show-bio");
 
+const getBioFromLs = () => {
+  const bio = getDataLs("bio");
+  if (bio) {
+    showBio.innerText = bio;
+    addBio.innerHTML = "Edit Bio";
+    showBio.style.marginBottom = "12px";
+  } else {
+    showBio.innerText = bio;
+    addBio.innerHTML = "Add Bio";
+    showBio.style.marginBottom = "0";
+  }
+  return bio;
+};
+// Get the URL of the current page
+const currentUrl = window.location.href;
+const fileName = currentUrl.split("/").pop();
+
+const handleBio = () => {
+  addBio.style.display = "none";
+  showBio.style.display = "none";
+  bioSection.insertAdjacentHTML(
+    "beforeend",
+    `<div class="bio-inner">
+        <textarea oninput=characterCounter(event) maxlength="101" name="bio-input" id="bio-input" placeholder="Describe Who You Are">${
+          getBioFromLs() ? getBioFromLs() : ""
+        }</textarea>
+        <span class="character-counter"></span>
+        <div class="buttons-status">
+            <div class="bio-status">
+                <span class="status-icon"></span>
+                <p>Public</p>
+            </div>
+            <div class="submit-buttons">
+                <button onclick=handleBioCancel(event)>Cancel</button>
+                <button class="bio-save-btn" onclick=handleBioSave(event)>Save</button>
+            </div>
+        </div>
+    </div>
+     `
+  );
+  document.getElementById("bio-input").focus();
+  verifyInput();
+};
+const verifyInput = () => {
+  const textarea = document.getElementById("bio-input").value;
+  const bioSaveBtn = document.querySelector(".bio-save-btn");
+  const bio = getDataLs("bio");
+  if (textarea === bio) {
+    bioSaveBtn.disabled = true;
+    bioSaveBtn.classList.add("not-allowed");
+  } else {
+    bioSaveBtn.disabled = false;
+    bioSaveBtn.classList.remove("not-allowed");
+  }
+};
+
+const characterCounter = (e) => {
+  const textarea = document.getElementById("bio-input");
+  const chrCounter = document.querySelector(".character-counter");
+  const maxValue = textarea.getAttribute("maxlength");
+  const currLength = textarea.value.length;
+  const remaining = maxValue - currLength;
+  chrCounter.innerHTML = `${remaining} characters remaining`;
+  verifyInput();
+  return remaining;
+};
+const handleBioCancel = (e) => {
+  const bioInner = document.querySelector(".bio-inner");
+  bioInner.remove();
+  addBio.style.display = "block";
+  showBio.style.display = "block";
+};
+const handleBioSave = (e) => {
+  const bioInner = document.querySelector(".bio-inner");
+  // Get the value of the textarea
+  const textareaValue = document.getElementById("bio-input").value;
+
+  sendBioToLs("bio", textareaValue);
+  bioInner.remove();
+  addBio.style.display = "block";
+  showBio.style.display = "block";
+  getBioFromLs();
+};
 const handleNavbarActive = (e) => {
   if (e.srcElement.nodeName == "LI") {
     const linksItem = document.getElementById("all-menu-links");
@@ -125,7 +211,6 @@ const getAllUsers = () => {
                     <h6 class="fw-bold ">8. How to reply on a Comment</h6>
                     <p class="card-text text-capitalize">just click on the reply button then write comment and press enter</p>
                   </div>
-                
               </div>
             </div>`);
   }
@@ -316,8 +401,10 @@ const getAllUsers = () => {
                 <div class="comment-input">
                     <img src="https://www.svgrepo.com/download/192244/man-user.svg" alt="">
                     <div class="input-box">
-                    <form onsubmit=commentSubmitForm(event,"${item.id}")>
-                      <input onblur=handleBlur(event) onfocus=handleFocus(event) name="topComment" type="text" placeholder="Write a Comment...">
+                    <form id="comment-Submit" onsubmit=commentSubmitForm(event,"${
+                      item.id
+                    }")>
+                      <input onfocus=handleFocus(event) name="topComment" type="text" placeholder="Write a Comment...">
                     </form>
                     <div class="comments-icons">
                     <div>
@@ -349,7 +436,9 @@ const getAllUsers = () => {
                       </li>
                       </ul>
                       </div>
-                      <div class="submit-icon"></div>
+                      <div onclick=handleComment(event,"${
+                        item.id
+                      }") class="submit-icon"></div>
                     </div>
                     </div>
                     
@@ -363,7 +452,12 @@ const getAllUsers = () => {
     UserPostAllData.innerHTML = dataList;
   }
 };
-
+if (fileName == "index.html" || fileName == "profile.html" || fileName == "") {
+  getAllUsers();
+}
+if (fileName == "profile.html") {
+  getBioFromLs();
+}
 // Edit Users
 
 const editSingleUser = (id) => {
@@ -457,8 +551,6 @@ const deleteUser = (id) => {
   }
 };
 
-getAllUsers();
-
 const commentSubmitForm = (event, id) => {
   event.preventDefault();
   // get form data from formData object
@@ -490,23 +582,36 @@ const commentSubmitForm = (event, id) => {
   }
 };
 
-const handleFocus = (e) => {
-  e.target.parentElement.parentElement.parentElement.classList.add("active");
+const handleComment = (event, id) => {
+  const commentSubmit = event.target.parentElement.parentElement.children[0];
+  let formData = new FormData(commentSubmit);
+
+  let { topComment } = Object.fromEntries(formData.entries());
+  if (!topComment) {
+    return false;
+  } else {
+    const allData = getDataLs("users");
+    const updatedData = {
+      id: createId(),
+      author: "Tanzir Ibne Ali",
+      photo: "https://www.svgrepo.com/download/192244/man-user.svg",
+      content: topComment,
+      nestedComment: [],
+      createdAt: Date.now(),
+    };
+    const updatedIndex = allData.findIndex((item) => item.id === id);
+    allData[updatedIndex] = {
+      ...allData[updatedIndex],
+      ...allData[updatedIndex].comments.push(updatedData),
+    };
+    localStorage.setItem("users", JSON.stringify(allData));
+    commentSubmit.reset();
+    getAllUsers();
+  }
 };
 
-const handleBlur = (e) => {
-  if (
-    e.target.parentElement.parentElement.parentElement.classList.contains(
-      "active"
-    )
-  ) {
-    e.target.parentElement.parentElement.parentElement.classList.remove(
-      "active"
-    );
-    console.log(e.target.value);
-  } else {
-    return false;
-  }
+const handleFocus = (e) => {
+  e.target.parentElement.parentElement.parentElement.classList.add("active");
 };
 
 const handleReplyClick = (e, id) => {
@@ -555,39 +660,80 @@ const replySubmitForm = (event, id, commentedId) => {
     getAllUsers();
   }
 };
+const handleNested = (event, id, commentedId) => {
+  const replySubmit = event.target.parentElement.parentElement.children[0];
+  let formData = new FormData(replySubmit);
 
-userForm.onsubmit = (e) => {
-  e.preventDefault();
-  const modalClose = document.getElementById("modalCloseBtn");
+  let { reply } = Object.fromEntries(formData.entries());
 
-  // get form data from formData object
-
-  let formData = new FormData(e.target);
-
-  let { name, avatar, status, content, link } = Object.fromEntries(
-    formData.entries()
-  );
-
-  // form validation
-
-  if (!name || !avatar) {
-    return (msg.innerHTML = setAlert("Invalid Credentials"));
-  } else if (content || link) {
-    sendDataLs("users", {
-      id: createId(),
-      name,
-      content,
-      status,
-      link,
-      avatar,
-      comments: [],
-      createdAt: Date.now(),
-    });
-    msg.innerHTML = setAlert("Data Stable", "success");
-    e.target.reset();
-    modalClose.click();
-    getAllUsers();
+  if (!reply) {
+    return false;
   } else {
-    return (msg.innerHTML = setAlert("Invalid Credentials"));
+    const allData = getDataLs("users");
+    const updatedData = {
+      id: createId(),
+      author: "Developer Robiul",
+      photo:
+        "https://robiulibneali.com/wp-content/uploads/2023/06/IMG_20210210_225451_686-scaled.jpg",
+      content: reply,
+      createdAt: Date.now(),
+    };
+
+    const updatedIndex = allData.findIndex((item) => item.id === commentedId);
+    const updatedComment = allData[updatedIndex].comments.findIndex(
+      (item) => item.id === id
+    );
+
+    allData[updatedIndex].comments[updatedComment] = {
+      ...allData[updatedIndex].comments[updatedComment],
+      ...allData[updatedIndex].comments[updatedComment].nestedComment.push(
+        updatedData
+      ),
+    };
+
+    localStorage.setItem("users", JSON.stringify(allData));
+    replySubmit.reset();
+    replySubmit.parentElement.parentElement.parentElement.parentElement.classList.remove(
+      "replyIsActive"
+    );
+
+    getAllUsers();
   }
 };
+if (fileName == "index.html" || fileName == "profile.html" || fileName == "") {
+  userForm.onsubmit = (e) => {
+    e.preventDefault();
+    const modalClose = document.getElementById("modalCloseBtn");
+
+    // get form data from formData object
+
+    let formData = new FormData(e.target);
+
+    let { name, avatar, status, content, link } = Object.fromEntries(
+      formData.entries()
+    );
+
+    // form validation
+
+    if (!name || !avatar) {
+      return (msg.innerHTML = setAlert("Invalid Credentials"));
+    } else if (content || link) {
+      sendDataLs("users", {
+        id: createId(),
+        name,
+        content,
+        status,
+        link,
+        avatar,
+        comments: [],
+        createdAt: Date.now(),
+      });
+      msg.innerHTML = setAlert("Data Stable", "success");
+      e.target.reset();
+      modalClose.click();
+      getAllUsers();
+    } else {
+      return (msg.innerHTML = setAlert("Invalid Credentials"));
+    }
+  };
+}

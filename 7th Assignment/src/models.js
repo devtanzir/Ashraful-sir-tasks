@@ -29,6 +29,10 @@ const sendDataLs = (key, data) => {
   localStorage.setItem(key, JSON.stringify(lsData));
 };
 
+const sendBioToLs = (key, data) => {
+  localStorage.setItem(key, JSON.stringify(data));
+};
+
 /**
  * Show Single Student From ls
  * @param {*} key

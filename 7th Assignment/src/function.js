@@ -36,13 +36,16 @@ const findContent = (content) => {
     return `<div class="post-body">
                 <div class="post-content">
                   <p>
-                    ${content}
+                    ${replaceNewline(content)}
                   </p>
                 </div>
               </div>`;
   }
   return " ";
 };
+function replaceNewline(str) {
+  return str.replace(/\n/g, "</br>");
+}
 
 const findNestedComments = (comments) => {
   if (comments.length > 0) {
@@ -96,7 +99,7 @@ const findComments = (comments, commentedId) => {
                <div class="nested-comment-input">
                  <img src="https://robiulibneali.com/wp-content/uploads/2023/06/IMG_20210210_225451_686-scaled.jpg" alt="">
                  <div class="nested-input-box">
-                 <form  onsubmit=replySubmitForm(event,"${
+                 <form id="reply-Submit" onsubmit=replySubmitForm(event,"${
                    item.id
                  }","${commentedId}")>
                    <input type="text" name="reply" placeholder="Write a Reply...">
@@ -129,7 +132,9 @@ const findComments = (comments, commentedId) => {
                 </a>
               </li>
               </ul>
-              <div class="nested-submit-icon"></div>
+              <div onclick=handleNested(event,"${
+                item.id
+              }","${commentedId}") class="nested-submit-icon"></div>
             </div>
             </div>
           </div>
@@ -204,30 +209,23 @@ const createId = () => {
  * @param {*} postDate
  * @returns
  */
-
-function formatPostTime(postDate) {
-  const currentDate = new Date();
-  const diff = currentDate - postDate;
-
-  const seconds = Math.floor(diff / 1000);
+function formatPostTime(timestamp) {
+  const currentTime = new Date();
+  const eventTime = new Date(timestamp);
+  const timeDifference = currentTime - eventTime;
+  const seconds = Math.floor(timeDifference / 1000);
   const minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
 
   if (days > 7) {
-    return postDate.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  } else if (days > 1) {
-    return `${days} d`;
-  } else if (days === 1) {
-    return "Yesterday";
-  } else if (hours >= 1) {
-    return `${hours} h`;
-  } else if (minutes >= 1) {
-    return `${minutes} m`;
+    return eventTime.toLocaleDateString(); // If more than 7 days, return full date
+  } else if (days > 0) {
+    return days === 1 ? "1 d" : days + " d";
+  } else if (hours > 0) {
+    return hours === 1 ? "1 h" : hours + " h";
+  } else if (minutes > 0) {
+    return minutes === 1 ? "1 m" : minutes + " m";
   } else {
     return "Just now";
   }

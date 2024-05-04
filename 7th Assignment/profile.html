@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="shortcut icon" href="./assets/icons/78.svg" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Facebook</title>
+</head>
+
+<body>
+    <div class="fb-home-header">
+        <div class="fb-home-search">
+            <a href="./index.html"><img src="./assets/icons/facebooklogo.svg" alt="" /></a>
+            <div class="search-box">
+                <svg fill="currentColor" viewBox="0 0 16 16" width="1em" height="1em"
+                    class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6 xlup9mm x1kky2od">
+                    <g fill-rule="evenodd" transform="translate(-448 -544)">
+                        <g fill-rule="nonzero">
+                            <path
+                                d="M10.743 2.257a6 6 0 1 1-8.485 8.486 6 6 0 0 1 8.485-8.486zm-1.06 1.06a4.5 4.5 0 1 0-6.365 6.364 4.5 4.5 0 0 0 6.364-6.363z"
+                                transform="translate(448 544)" />
+                            <path
+                                d="M10.39 8.75a2.94 2.94 0 0 0-.199.432c-.155.417-.23.849-.172 1.284.055.415.232.794.54 1.103a.75.75 0 0 0 1.112-1.004l-.051-.057a.39.39 0 0 1-.114-.24c-.021-.155.014-.356.09-.563.031-.081.06-.145.08-.182l.012-.022a.75.75 0 1 0-1.299-.752z"
+                                transform="translate(448 544)" />
+                            <path
+                                d="M9.557 11.659c.038-.018.09-.04.15-.064.207-.077.408-.112.562-.092.08.01.143.034.198.077l.041.036a.75.75 0 0 0 1.06-1.06 1.881 1.881 0 0 0-1.103-.54c-.435-.058-.867.018-1.284.175-.189.07-.336.143-.433.2a.75.75 0 0 0 .624 1.356l.066-.027.12-.061z"
+                                transform="translate(448 544)" />
+                            <path
+                                d="m13.463 15.142-.04-.044-3.574-4.192c-.599-.703.355-1.656 1.058-1.057l4.191 3.574.044.04c.058.059.122.137.182.24.249.425.249.96-.154 1.41l-.057.057c-.45.403-.986.403-1.411.154a1.182 1.182 0 0 1-.24-.182zm.617-.616.444-.444a.31.31 0 0 0-.063-.052c-.093-.055-.263-.055-.35.024l.208.232.207-.206.006.007-.22.257-.026-.024.033-.034.025.027-.257.22-.007-.007zm-.027-.415c-.078.088-.078.257-.023.35a.31.31 0 0 0 .051.063l.205-.204-.233-.209z"
+                                transform="translate(448 544)" />
+                        </g>
+                    </g>
+                </svg>
+                <input type="search" placeholder="Search Facebook" />
+            </div>
+        </div>
+        <div class="fb-home-menu">
+            <ul onclick="handleNavbarActive(event)" id="all-menu-links">
+                <li>
+                    <a href="javascript:void(0)" id="home-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"
+                            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq">
+                            <path
+                                d="M8.99 23H7.93c-1.354 0-2.471 0-3.355-.119-.928-.125-1.747-.396-2.403-1.053-.656-.656-.928-1.475-1.053-2.403C1 18.541 1 17.425 1 16.07v-4.3c0-1.738-.002-2.947.528-4.006.53-1.06 1.497-1.784 2.888-2.826L6.65 3.263c1.114-.835 2.02-1.515 2.815-1.977C10.294.803 11.092.5 12 .5c.908 0 1.707.303 2.537.786.795.462 1.7 1.142 2.815 1.977l2.232 1.675c1.391 1.042 2.359 1.766 2.888 2.826.53 1.059.53 2.268.528 4.006v4.3c0 1.355 0 2.471-.119 3.355-.124.928-.396 1.747-1.052 2.403-.657.657-1.476.928-2.404 1.053-.884.119-2 .119-3.354.119H8.99zM7.8 4.9l-2 1.5C4.15 7.638 3.61 8.074 3.317 8.658 3.025 9.242 3 9.937 3 12v4c0 1.442.002 2.424.101 3.159.095.706.262 1.033.485 1.255.223.223.55.39 1.256.485.734.099 1.716.1 3.158.1V14.5a2.5 2.5 0 0 1 2.5-2.5h3a2.5 2.5 0 0 1 2.5 2.5V21c1.443 0 2.424-.002 3.159-.101.706-.095 1.033-.262 1.255-.485.223-.222.39-.55.485-1.256.099-.734.101-1.716.101-3.158v-4c0-2.063-.025-2.758-.317-3.342-.291-.584-.832-1.02-2.483-2.258l-2-1.5c-1.174-.881-1.987-1.489-2.67-1.886C12.87 2.63 12.425 2.5 12 2.5c-.425 0-.87.13-1.53.514-.682.397-1.495 1.005-2.67 1.886zM14 21v-6.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V21h4z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" id="friends-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"
+                            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq">
+                            <path
+                                d="M8 2.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zM5.5 7a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0zm-.25 6A4.75 4.75 0 0 0 .5 17.75 3.25 3.25 0 0 0 3.75 21h8.5a3.25 3.25 0 0 0 3.25-3.25A4.75 4.75 0 0 0 10.75 13h-5.5zM2.5 17.75A2.75 2.75 0 0 1 5.25 15h5.5a2.75 2.75 0 0 1 2.75 2.75c0 .69-.56 1.25-1.25 1.25h-8.5c-.69 0-1.25-.56-1.25-1.25zM14 9.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0zM17.5 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm0 6.5a1 1 0 1 0 0 2h2.3a1.7 1.7 0 0 1 1.7 1.7.8.8 0 0 1-.8.8h-3.2a1 1 0 1 0 0 2h3.2a2.8 2.8 0 0 0 2.8-2.8 3.7 3.7 0 0 0-3.7-3.7h-2.3z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" id="marketplace">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"
+                            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq">
+                            <path
+                                d="M1.588 3.227A3.125 3.125 0 0 1 4.58 1h14.84c1.38 0 2.597.905 2.993 2.227l.816 2.719a6.47 6.47 0 0 1 .272 1.854A5.183 5.183 0 0 1 22 11.455v4.615c0 1.355 0 2.471-.119 3.355-.125.928-.396 1.747-1.053 2.403-.656.657-1.475.928-2.403 1.053-.884.12-2 .119-3.354.119H8.929c-1.354 0-2.47 0-3.354-.119-.928-.125-1.747-.396-2.403-1.053-.657-.656-.929-1.475-1.053-2.403-.12-.884-.119-2-.119-3.354V11.5l.001-.045A5.184 5.184 0 0 1 .5 7.8c0-.628.092-1.252.272-1.854l.816-2.719zM10 21h4v-3.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V21zm6-.002c.918-.005 1.608-.025 2.159-.099.706-.095 1.033-.262 1.255-.485.223-.222.39-.55.485-1.255.099-.735.101-1.716.101-3.159v-3.284a5.195 5.195 0 0 1-1.7.284 5.18 5.18 0 0 1-3.15-1.062A5.18 5.18 0 0 1 12 13a5.18 5.18 0 0 1-3.15-1.062A5.18 5.18 0 0 1 5.7 13a5.2 5.2 0 0 1-1.7-.284V16c0 1.442.002 2.424.1 3.159.096.706.263 1.033.486 1.255.222.223.55.39 1.255.485.551.074 1.24.094 2.159.1V17.5a2.5 2.5 0 0 1 2.5-2.5h3a2.5 2.5 0 0 1 2.5 2.5v3.498zM4.581 3c-.497 0-.935.326-1.078.802l-.815 2.72A4.45 4.45 0 0 0 2.5 7.8a3.2 3.2 0 0 0 5.6 2.117 1 1 0 0 1 1.5 0A3.19 3.19 0 0 0 12 11a3.19 3.19 0 0 0 2.4-1.083 1 1 0 0 1 1.5 0A3.2 3.2 0 0 0 21.5 7.8c0-.434-.063-.865-.188-1.28l-.816-2.72A1.125 1.125 0 0 0 19.42 3H4.58z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" id="groups">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"
+                            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq">
+                            <path d="M12 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm-2 4a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                            <path
+                                d="M.5 12C.5 5.649 5.649.5 12 .5S23.5 5.649 23.5 12 18.351 23.5 12 23.5.5 18.351.5 12zm2.21-2a9.537 9.537 0 0 0 0 3.993l.3.007A2 2 0 0 0 3 10h-.29zm.663-1.983a4 4 0 0 1 0 7.966 9.523 9.523 0 0 0 1.948 2.773A5.002 5.002 0 0 1 10 15.523h4a5.002 5.002 0 0 1 4.679 3.233 9.523 9.523 0 0 0 1.948-2.773 4 4 0 0 1 0-7.966A9.501 9.501 0 0 0 12 2.5a9.501 9.501 0 0 0-8.627 5.517zM21.5 12a9.55 9.55 0 0 0-.212-2.007l-.265.007H21a2 2 0 0 0-.01 4l.3-.007c.138-.643.21-1.31.21-1.993zM12 21.5a9.455 9.455 0 0 0 4.97-1.402A3 3 0 0 0 14 17.523h-4a3 3 0 0 0-2.97 2.575A9.456 9.456 0 0 0 12 21.5z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="fb-home-user">
+            <div class="fb-user-item">
+                <a href="javascript:void(0)">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                        class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq">
+                        <path
+                            d="M12 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8 16a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 17a3 3 0 1 0 0 6 3 3 0 0 0 0-6z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="fb-user-item">
+                <a href="javascript:void(0)"><svg viewBox="0 0 12 13" width="20" height="20" fill="currentColor"
+                        class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq">
+                        <g fill-rule="evenodd" transform="translate(-450 -1073)">
+                            <path
+                                d="m459.603 1077.948-1.762 2.851a.89.89 0 0 1-1.302.245l-1.402-1.072a.354.354 0 0 0-.433.001l-1.893 1.465c-.253.196-.583-.112-.414-.386l1.763-2.851a.89.89 0 0 1 1.301-.245l1.402 1.072a.354.354 0 0 0 .434-.001l1.893-1.465c.253-.196.582.112.413.386M456 1073.5c-3.38 0-6 2.476-6 5.82 0 1.75.717 3.26 1.884 4.305.099.087.158.21.162.342l.032 1.067a.48.48 0 0 0 .674.425l1.191-.526a.473.473 0 0 1 .32-.024c.548.151 1.13.231 1.737.231 3.38 0 6-2.476 6-5.82 0-3.344-2.62-5.82-6-5.82">
+                            </path>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <div class="fb-user-item">
+                <a href="javascript:void(0)"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                        class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq">
+                        <path
+                            d="M3 9.5a9 9 0 1 1 18 0v2.927c0 1.69.475 3.345 1.37 4.778a1.5 1.5 0 0 1-1.272 2.295h-4.625a4.5 4.5 0 0 1-8.946 0H2.902a1.5 1.5 0 0 1-1.272-2.295A9.01 9.01 0 0 0 3 12.43V9.5zm6.55 10a2.5 2.5 0 0 0 4.9 0h-4.9z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div onclick="handleUserMenu()" id="dropdownController" class="fb-user-item">
+                <svg class="down-arrow" viewBox="0 0 16 16" width="12" height="12" fill="currentColor"
+                    class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color: var(--primary-icon);">
+                    <g fill-rule="evenodd" transform="translate(-448 -544)">
+                        <path fill-rule="nonzero"
+                            d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z">
+                        </path>
+                    </g>
+                </svg>
+                <div class="user-menu-dropdown">
+                    <div class="user-menu-box">
+                        <div class="user-data-box">
+                            <div class="user-data-box-item">
+                                <img src="./assets/images/user.png" alt="" />
+                                <span>Tanzir Ibne Ali</span>
+                            </div>
+                            <div class="divider-0"></div>
+                            <div class="see-profile-section">
+                                <span class="user-data-icon"></span>
+                                <a href="javascript:void(0)">See all profiles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu-list">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="user-menu-icons">
+                                        <span class="user-menu-icon"></span>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <span>Meta Business Suite</span>
+                                    </div>
+                                </a>
+                                <div class="user-meta-arrows">
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="user-menu-icons">
+                                        <span class="user-menu-icon"></span>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <span>Settings & privacy</span>
+                                    </div>
+                                </a>
+                                <div class="user-menu-arrows">
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="user-menu-icons">
+                                        <span class="user-menu-icon"></span>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <span>Help & support</span>
+                                    </div>
+                                </a>
+                                <div class="user-menu-arrows">
+                                </div>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="modal" data-bs-target="javascript:void(0)exampleModal3" href="javascript:void(0)">
+                                    <div class="user-menu-icons">
+                                        <span class="user-menu-icon"></span>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <span>Display & accessibility</span>
+                                    </div>
+                                </a>
+                                <div class="user-menu-arrows">
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="user-menu-icons">
+                                        <span class="user-menu-icon"></span>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <span>Give feedback</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="user-menu-icons">
+                                        <span class="user-menu-icon"></span>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <span>Log out</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="./assets/images/user.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- Cover Photo  -->
+    <div class="fb-profile-header">
+        <div class="fb-header-shad"></div>
+        <div class="fb-cover-photo">
+            <img src="./assets/images/cover.jpg" alt="" />
+            <button><span class="camera-icon"></span> Edit cover photo</button>
+        </div>
+        <div class="fb-profile-details">
+            <div class="profile-info">
+                <div class="profile-photo">
+                    <img src="./assets/images/user.png" alt="profile Photo" />
+                    <div class="profile-img-icon">
+                        <div class="camera-icon"></div>
+                    </div>
+                </div>
+                <div class="profile-desc">
+                    <h1>Tanzir Ibne Ali</h1>
+                    <div class="profile-follow-details">
+                        <span class="profile-followers">89 Friends</span>
+                    </div>
+                    <div class="profile-friends-list">
+                        <ul>
+                            <li>
+                                <img src="./assets/images/user2.jpg" alt="friends" />
+                            </li>
+                            <li>
+                                <img src="./assets/images/user3.jpg" alt="friends" />
+                            </li>
+                            <li>
+                                <img src="./assets/images/user4.jpg" alt="friends" />
+                            </li>
+                            <li>
+                                <img src="./assets/images/user5.jpg" alt="friends" />
+                            </li>
+                            <li>
+                                <img src="./assets/images/user6.webp" alt="friends" />
+                            </li>
+                            <li>
+                                <img src="./assets/images/user7.webp" alt="friends" />
+                            </li>
+                            <li>
+                                <img src="./assets/images/user8.webp" alt="friends" />
+                            </li>
+                            <li>
+                                <img src="./assets/images/user7.webp" alt="friends" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-action">
+                <button><span class="addStory-icon"></span> <span>Add Story</span></button>
+                <button>
+                    <span class="message-icon"></span> <span>Edit Profile</span>
+                </button>
+                <button>
+                    <span class="add-friend-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="fb-profile-menu">
+            <ul>
+                <li><a href="javascript:void(0)">Posts</a></li>
+                <li><a href="javascript:void(0)">About</a></li>
+                <li><a href="javascript:void(0)">Followers</a></li>
+                <li><a href="javascript:void(0)">Photos</a></li>
+                <li><a href="javascript:void(0)">Videos</a></li>
+                <li><a href="javascript:void(0)">Articlse</a></li>
+                <li><a href="javascript:void(0)">More <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"
+                            aria-hidden="true" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+                            style="--color: javascript:void(0)65676b;">
+                            <path
+                                d="M10 14a1 1 0 0 1-.755-.349L5.329 9.182a1.367 1.367 0 0 1-.205-1.46A1.184 1.184 0 0 1 6.2 7h7.6a1.18 1.18 0 0 1 1.074.721 1.357 1.357 0 0 1-.2 1.457l-3.918 4.473A1 1 0 0 1 10 14z">
+                            </path>
+                        </svg></a></li>
+            </ul>
+            <button class="three-dot">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                    class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq">
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                    <circle cx="19.5" cy="12" r="2.5"></circle>
+                    <circle cx="4.5" cy="12" r="2.5"></circle>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="fb-profile-body">
+        <div class="fb-profile-body-details">
+            <div class="row">
+                <div class="col-md-5 pe-0">
+                    <div class="intro-section">
+                        <h4>Intro</h4>
+                        <div class="bio-section">
+                            <p id="show-bio"></p>
+                            <button id="addBio" onclick="handleBio()">
+                            Add Bio
+                        </button>
+                        </div>
+                        
+                        <ul>
+                            <li><a href="javascript:void(0)"> <span class="intro-list-icon"></span> Student at I am a student still does
+                                    not work</a></li>
+                            <li><a href="javascript:void(0)"> <span class="intro-list-icon"></span> Went to Madrasha E Baitul Mamur
+                                    (Alim)</a></li>
+                            <li><a href="javascript:void(0)">
+                                    <span class="intro-list-icon"></span> Lives in <span>&nbsp;Mirpur, Dhaka, Bangladesh</span>
+                                </a>
+                            </li>
+                            <li><a href="javascript:void(0)"> <span class="intro-list-icon"></span>From<span>&nbsp;Dhaka, Bangladesh</span></a>
+                            </li>
+                            <li><a href="javascript:void(0)"> <span class="intro-list-icon"></span> Single</a></li>
+                            <li><a href="javascript:void(0)"> <span class="intro-list-icon"></span>
+                                    tanziribneali</a></li>
+                            <li><a href="javascript:void(0)"> <span class="intro-list-icon"></span>
+                                    tanziribneali</a></li>
+                        </ul>
+                        <button class="mb-3">Edit Details</button>
+                        <button>Add Featured</button>
+                    </div>
+                </div>
+                <div class="col-md-7 ps-0">
+                    <div class="fb-home-timeline-area w-100">
+                        <div class="fb-home-timeline">
+                          <!-- Create Post Box  -->
+                          <div class="create-post">
+                            <div class="create-post-header">
+                              <img src="./assets/images/user.png" alt="" />
+                              <button 
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal">Whats on your mind ?</button>
+                            </div>
+                            <div class="divider-0"></div>
+                            <div class="create-post-footer">
+                              <ul>
+                                <li>
+                                  <div class="post-icon"></div>
+                                  <span>Live Video</span>
+                                </li>
+                                <li>
+                                  <div class="post-icon"></div>
+                                  Photo/video
+                                </li>
+                                <li>
+                                  <div class="post-icon"></div>
+                                  Life Event
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                
+                          <div id="UserPostAllData">
+                
+                        </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+
+        <!-- Modal -->
+        <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create New Post</h5>
+              <button
+              id="modalCloseBtn"
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="msg"></div>
+              <form id="user-form">
+                <div class="my-3">
+                  <label for="name">name</label>
+                  <input id="name" name="name" type="text" class="form-control" />
+                </div>
+                <div class="my-3">
+                  <label for="avatar">avatar</label>
+                  <input id="avatar" name="avatar" type="text" class="form-control" />
+                </div>
+                <div class="my-3"> <h4>Post Status</h4>
+                  <input type="radio" id="data1" name="status" checked value="public">
+                  <label for="data1">Public</label><br>
+                  <input type="radio" id="data2" name="status" value="friends">
+                  <label for="data2">Friends Only</label><br>
+                  <input type="radio" id="data3" name="status" value="privet">
+                  <label for="data3">Only Me</label><br>
+                </div>
+                <div class="my-3">
+                  <label for="content">content</label>
+                  <textarea class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
+               
+                </div>
+                <div class="my-3">
+                  <label for="postPhoto">Photo Links | Video Id</label>
+                  <input id="postPhoto" name="link" type="text" class="form-control" />
+                </div>
+                <div class="my-3">
+                  <input
+                    type="submit"
+                    class="btn btn-primary w-100"
+                    value="Add Now"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+          <!-- edit data modal -->
+          <div
+          class="modal fade"
+          id="exampleModal2"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel3"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel3">Update Data</h5>
+                <button
+                id="editModalClose"
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="msg"></div>
+                <form id="user-update-form"></form>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+          <!-- documentation data modal -->
+          <div
+          class="modal fade"
+          id="exampleModal3"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel4"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content w-100">
+              <div class="modal-header  bg-light">
+                <h5 class="modal-title  fw-bold" id="exampleModalLabel4">Documentation</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">1. How to Upload A post</h6>
+                      <p class="card-text text-capitalize"> click the button "what's on your mind" that will give you a fill the from and Click the add now button.</p>
+                    </div>
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">2. How to Add a Photo on your Post</h6>
+                      <p class="card-text text-capitalize"> pick any type of photo link from any website, then put the link on the last input field.</p>
+                    </div>
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">3. How to Set a Status</h6>
+                      <p class="card-text text-capitalize"> your default status will be public. if you change the status you need to select the radio field then your status will be changed.</p>
+                    </div>
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">4. How to Set a Avatar</h6>
+                      <p class="card-text text-capitalize"> pick any type of photo link from any website, then put the link on the avatar input field.</p>
+                    </div>
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">4. How to Upload Youtube Video</h6>
+                      <p class="card-text text-capitalize">for Upload Video from youtube. you need the id of any video. this is original youtube video link "https://www.youtube.com/watch?v=<span class="bg-warning">_EjeWOLddgs</span>". look the yellow marked field there has an id. you need to to copy the id paste it on the last input fields</p>
+                    </div>
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">4. How to Upload Facebook Video</h6>
+                      <p class="card-text text-capitalize">for Upload Video from facebook. you need the id of any video. this is original facebook video link "https://www.facebook.com/watch?v=<span class="bg-info">297769083126611</span>". look the yellow marked field there has an id. you need to to copy the id paste it on the last input fields</p>
+                    </div>
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">5. How to Update a Post</h6>
+                      <p class="card-text text-capitalize">for update a post you need to click the <i class="fa-regular fa-pen-to-square"></i> icon. it will give you a form, then re fill the form and submit it.</p>
+                    </div>
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">6. How to delete a Post</h6>
+                      <p class="card-text text-capitalize">for update a post you need to click the <i class="fa-regular fa-trash-can"></i> icon. it will give you a confirm alert. if you click ok your post will be deleted. if you click cancel then your post still in same position.</p>
+                    </div>
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">7. How to Comment on a Post</h6>
+                      <p class="card-text text-capitalize">just click on the comment input then write a comment and submit that </p>
+                    </div>
+                    <div class="content-box mb-3">
+                      <h6 class="fw-bold ">8. How to reply on a Comment</h6>
+                      <p class="card-text text-capitalize">just click on the reply button then write comment and press enter</p>
+                    </div>
+                    
+              </div>
+            </div>
+          </div>
+        </div>
+    
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+     <script src="src/data.js"></script>
+     <script src="src/models.js"></script>
+     <script src="src/function.js"></script>
+     <script src="src/main.js"></script>
+</body>
+
+</html>
